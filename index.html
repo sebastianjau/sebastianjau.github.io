@@ -38,21 +38,35 @@
             scrollbar-width: none; /* Firefox */
         }
 
-        /* Apply the dynamic font size to all navigation links */
-        .nav-link, .mobile-nav-link, .sub-nav-link {
-            font-size: calc((var(--site-navigation-font-font-size-value) - 1) * 1.2vw + 1rem);
+        /* Apply specific desktop styles using a media query */
+        @media screen and (min-width: 768px) {
+            /* Adjust the navigation bar padding to 1.4vw total */
+            .site-header {
+                padding-top: 0.7vw;
+                padding-bottom: 0.7vw;
+            }
+
+            /* Apply dynamic font size with a 12px base */
+            .nav-link {
+                font-size: calc((var(--site-navigation-font-font-size-value) - 1) * 1.2vw + 12px);
+            }
+
+            /* Set the gap between desktop navigation links to 2vw */
+            .desktop-nav-links {
+                gap: 2vw;
+            }
         }
         
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="py-4 sticky top-0 z-50">
+    <header class="site-header sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <!-- Logo link to home page -->
             <a href="#" data-page="hero-section" class="nav-link font-bold text-white">Sebastián Valdivieso Jáuregui</a>
             <!-- Desktop Navigation -->
-            <div class="space-x-6 hidden md:flex items-center">
+            <div class="desktop-nav-links hidden md:flex items-center">
                 <div class="relative group">
                     <a href="#" data-page="selected-work" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">
                         Selected Work
@@ -85,11 +99,11 @@
             <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
                 <!-- Main Menu -->
                 <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">
+                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">
                         Selected Work
                     </a>
-                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Reel</a>
-                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">About</a>
+                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Reel</a>
+                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">About</a>
                 </div>
                 <!-- Sub Menu for Selected Work -->
                 <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
@@ -98,9 +112,9 @@
                         <i class="fas fa-arrow-left"></i>
                         <span>Back</span>
                     </button>
-                    <a href="#narrative" class="sub-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Narrative</a>
-                    <a href="#music-video" class="sub-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Music Video</a>
-                    <a href="#commercial" class="sub-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Commercial</a>
+                    <a href="#narrative" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Narrative</a>
+                    <a href="#music-video" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Music Video</a>
+                    <a href="#commercial" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Commercial</a>
                 </div>
             </div>
         </div>
