@@ -8,23 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Apply 'Inter' font and a fixed background image to the body */
+        /* Apply 'Montserrat' font and a fixed background image to the body */
         body {
-            font-family: 'Inter', sans-serif;
-            color: #e2e8f0; /* Light gray text */
+            font-family: 'Montserrat', sans-serif;
+            color: #e2e8f0; /* Light gray text for the main content */
             
             /* Set the background image and properties */
-            background-image: url('https://googleusercontent.com/image_generation_content/0');
+            background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/Cover.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            
-            /* Add a semi-transparent overlay for text readability */
-            background-color: rgba(13, 17, 23, 0.7); /* Dark charcoal with 70% opacity */
-            background-blend-mode: multiply; /* Blends the color and image */
         }
         
         /* Hide scrollbar for a cleaner look */
@@ -39,12 +35,12 @@
 </head>
 <body class="antialiased">
 
-    <header class="py-4 sticky top-0 z-50 backdrop-filter backdrop-blur-lg">
+    <header class="py-4 sticky top-0 z-50 bg-[#0d1117] bg-opacity-90 backdrop-filter backdrop-blur-lg">
         <nav class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-bold">Sebastián Valdivieso Jáuregui</div>
+            <div class="text-2xl font-bold text-white">Sebastián Valdivieso Jáuregui</div>
             <div class="space-x-6 hidden md:flex items-center">
                 <div class="relative group">
-                    <a href="#" data-page="selected-work" class="nav-link hover:text-pink-400 transition-colors duration-300">
+                    <a href="#" data-page="selected-work" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">
                         Selected Work
                     </a>
                     <div class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg py-2 hidden group-hover:block">
@@ -53,8 +49,8 @@
                         <a href="#commercial" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-300 rounded-lg">Commercial</a>
                     </div>
                 </div>
-                <a href="#" data-page="reel" class="nav-link hover:text-pink-400 transition-colors duration-300">Reel</a>
-                <a href="#" data-page="about" class="nav-link hover:text-pink-400 transition-colors duration-300">About</a>
+                <a href="#" data-page="reel" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">Reel</a>
+                <a href="#" data-page="about" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">About</a>
             </div>
         </nav>
     </header>
