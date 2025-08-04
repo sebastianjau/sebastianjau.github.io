@@ -40,6 +40,11 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        /* Set the logo font to Europa, overriding the nav-link setting */
+        .logo-font {
+            font-family: 'Europa', sans-serif;
+        }
+
         /* Hide scrollbar for a cleaner look */
         body::-webkit-scrollbar {
             display: none;
@@ -69,8 +74,8 @@
     <header class="site-header sticky top-0 z-50">
         <!-- Removed 'container' and 'mx-auto' and added 'w-full' to allow the nav bar to stretch to the edges -->
         <nav class="w-full px-6 flex justify-between items-center">
-            <!-- Logo link to home page. Removed text-xs class and will use the new CSS rule. -->
-            <a href="#" data-page="hero-section" class="nav-link font-bold text-white">Sebastián Valdivieso Jáuregui</a>
+            <!-- Logo link to home page. Removed 'font-bold' class to make the logo font normal. -->
+            <a href="#" data-page="hero-section" class="nav-link logo-font text-white">Sebastián Valdivieso Jáuregui</a>
             <!-- Desktop Navigation -->
             <div class="desktop-nav-links hidden md:flex items-center">
                 <div class="relative group">
@@ -113,13 +118,13 @@
                 <!-- Main Menu -->
                 <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
                     <!-- Changed hover color to white -->
-                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-white text-3xl font-bold transition-colors duration-300">
+                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">
                         Selected Work
                     </a>
                     <!-- Changed hover color to white -->
-                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-white text-3xl font-bold transition-colors duration-300">Reel</a>
+                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
                     <!-- Changed hover color to white -->
-                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-white text-3xl font-bold transition-colors duration-300">About</a>
+                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
                 </div>
                 <!-- Sub Menu for Selected Work -->
                 <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
@@ -129,11 +134,11 @@
                         <span>Back</span>
                     </button>
                     <!-- Changed hover color to white -->
-                    <a href="#narrative" class="sub-nav-link text-white hover:text-white text-3xl font-bold transition-colors duration-300">Narrative</a>
+                    <a href="#narrative" class="sub-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Narrative</a>
                     <!-- Changed hover color to white -->
-                    <a href="#music-video" class="sub-nav-link text-white hover:text-white text-3xl font-bold transition-colors duration-300">Music Video</a>
+                    <a href="#music-video" class="sub-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Music Video</a>
                     <!-- Changed hover color to white -->
-                    <a href="#commercial" class="sub-nav-link text-white hover:text-white text-3xl font-bold transition-colors duration-300">Commercial</a>
+                    <a href="#commercial" class="sub-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Commercial</a>
                 </div>
             </div>
         </div>
