@@ -10,6 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <style>
+        /* Define a custom CSS variable for the font size calculation */
+        :root {
+            --site-navigation-font-font-size-value: 2;
+        }
+
         /* Apply 'Montserrat' font, uppercase transformation, and a fixed background image to the body */
         body {
             font-family: 'Montserrat', sans-serif;
@@ -32,6 +37,12 @@
             -ms-overflow-style: none; /* IE and Edge */
             scrollbar-width: none; /* Firefox */
         }
+
+        /* Apply the dynamic font size to all navigation links */
+        .nav-link, .mobile-nav-link, .sub-nav-link {
+            font-size: calc((var(--site-navigation-font-font-size-value) - 1) * 1.2vw + 1rem);
+        }
+        
     </style>
 </head>
 <body class="antialiased">
@@ -74,11 +85,11 @@
             <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
                 <!-- Main Menu -->
                 <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">
+                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">
                         Selected Work
                     </a>
-                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Reel</a>
-                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">About</a>
+                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Reel</a>
+                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">About</a>
                 </div>
                 <!-- Sub Menu for Selected Work -->
                 <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
@@ -87,9 +98,9 @@
                         <i class="fas fa-arrow-left"></i>
                         <span>Back</span>
                     </button>
-                    <a href="#narrative" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Narrative</a>
-                    <a href="#music-video" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Music Video</a>
-                    <a href="#commercial" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Commercial</a>
+                    <a href="#narrative" class="sub-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Narrative</a>
+                    <a href="#music-video" class="sub-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Music Video</a>
+                    <a href="#commercial" class="sub-nav-link text-white hover:text-pink-400 font-bold transition-colors duration-300">Commercial</a>
                 </div>
             </div>
         </div>
