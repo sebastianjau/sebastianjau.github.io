@@ -19,7 +19,7 @@
             font-family: 'Europa', sans-serif;
             color: #e2e8f0; /* Light gray text for the main content */
             text-transform: uppercase; /* All text will be in uppercase */
-            font-size: 1.4rem; /* Set base font size for the body */
+            font-size: 1.2rem; /* Set base font size for the body to 1.2rem */
             
             /* Set the background image and properties */
             background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/Cover.webp');
@@ -32,7 +32,7 @@
         /* Apply 'Montserrat' font and the new font size to the navigation links and logo */
         .nav-link, .dropdown-links a {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem; /* Set font size for desktop navigation and dropdown links */
+            font-size: 1.2rem; /* Set font size for desktop navigation and dropdown links to 1.2rem */
         }
         
         /* Apply Montserrat font to mobile navigation links */
@@ -78,14 +78,14 @@
                     <a href="#" data-page="selected-work" class="nav-link text-white hover:text-white transition-colors duration-300">
                         Selected Work
                     </a>
-                    <!-- The dropdown menu now has no background, border, or shadow -->
-                    <div class="dropdown-links absolute left-0 top-full w-48 hidden group-hover:block">
-                        <!-- Removed text-xs class -->
-                        <a href="#narrative" class="block py-1 text-white hover:text-white transition-colors duration-300">Narrative</a>
-                        <!-- Removed text-xs class -->
-                        <a href="#music-video" class="block py-1 text-white hover:text-white transition-colors duration-300">Music Video</a>
-                        <!-- Removed text-xs class -->
-                        <a href="#commercial" class="block py-1 text-white hover:text-white transition-colors duration-300">Commercial</a>
+                    <!-- The dropdown menu now has no background, border, or shadow. Changed 'left-0' to 'right-0' to align it to the right. -->
+                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block">
+                        <!-- Removed 'py-1' from each link to make them closer vertically -->
+                        <a href="#narrative" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
+                        <!-- Removed 'py-1' from each link to make them closer vertically -->
+                        <a href="#music-video" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
+                        <!-- Removed 'py-1' from each link to make them closer vertically -->
+                        <a href="#commercial" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
                     </div>
                 </div>
                 <!-- Changed hover color to white and removed text-xs class -->
