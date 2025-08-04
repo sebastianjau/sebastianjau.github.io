@@ -1,53 +1,153 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sebastián Valdivieso Jáuregui</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply 'Inter' font and a dark background to the body */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark charcoal color */
+            color: #e2e8f0; /* Light gray text */
+        }
+        /* Hide scrollbar for a cleaner look */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <div class="logo"><h1>SEBASTIÁN VALDIVIESO JÁUREGUI</h1></div>
-    <nav>
-      <a href="#selected">SELECTED WORK</a>
-      <a href="#about">ABOUT</a>
-      <a href="#language">English</a>
-    </nav>
-  </header>
+<body class="antialiased">
 
-  <section id="hero">
-    <!-- Replace with background image -->
-    <div class="hero-text">
-      <h2>Cinematographer & Storyteller</h2>
-    </div>
-  </section>
+    <header class="py-4 sticky top-0 z-50 bg-[#0d1117] bg-opacity-90 backdrop-filter backdrop-blur-lg">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <div class="text-2xl font-bold">Sebastián Valdivieso Jáuregui</div>
+            <div class="space-x-6 hidden md:flex items-center">
+                <div class="relative group">
+                    <a href="#" data-page="selected-work" class="nav-link hover:text-pink-400 transition-colors duration-300">
+                        Selected Work
+                    </a>
+                    <div class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg py-2 hidden group-hover:block">
+                        <a href="#narrative" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-300 rounded-lg">Narrative</a>
+                        <a href="#music-video" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-300 rounded-lg">Music Video</a>
+                        <a href="#commercial" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-300 rounded-lg">Commercial</a>
+                    </div>
+                </div>
+                <a href="#" data-page="reel" class="nav-link hover:text-pink-400 transition-colors duration-300">Reel</a>
+                <a href="#" data-page="about" class="nav-link hover:text-pink-400 transition-colors duration-300">About</a>
+            </div>
+        </nav>
+    </header>
 
-  <main>
-    <section id="selected">
-      <h2>SELECTED WORK</h2>
-      <ul>
-        <li><a href="#narrative">NARRATIVE</a></li>
-        <li><a href="#music-video">MUSIC VIDEO</a></li>
-        <li><a href="#commercial">COMMERCIAL</a></li>
-        <li><a href="#reel">REEL</a></li>
-      </ul>
-    </section>
+    <main class="container mx-auto px-6">
+        <section id="hero-section" class="py-20 md:py-32 text-center">
+            <div class="max-w-4xl mx-auto">
+                </div>
+        </section>
 
-    <section id="about">
-      <h2>ABOUT</h2>
-      <p>
-        My name is Sebastián Valdivieso Jáuregui, an Ecuadorian‑Colombian
-        cinematographer & storyteller based in Austin, Texas. I graduated with
-        an MFA in Film Production at the University of Texas and have worked on
-        award‑winning shorts, music videos, and commercials.
-      </p>
-    </section>
-  </main>
+        <section id="selected-work-page" class="py-20 hidden">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Selected Work</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div id="narrative" class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+                        <i class="fas fa-film text-3xl text-pink-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Narrative Project</h3>
+                        <p class="text-gray-400">
+                            A short description of your narrative film project.
+                        </p>
+                    </div>
+                    <div id="music-video" class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+                        <i class="fas fa-music text-3xl text-purple-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Music Video Project</h3>
+                        <p class="text-gray-400">
+                            A short description of your music video project.
+                        </p>
+                    </div>
+                    <div id="commercial" class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
+                        <i class="fas fa-building text-3xl text-indigo-400 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Commercial Project</h3>
+                        <p class="text-gray-400">
+                            A short description of your commercial project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>© 2020 Sebastián Valdivieso Jáuregui. All rights reserved.</p>
-  </footer>
+        <section id="reel-page" class="py-20 text-center hidden">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">Reel</h2>
+                <p class="text-lg text-gray-400">
+                    This is where you can embed your video reel.
+                </p>
+                <div class="mt-8 bg-gray-800 rounded-lg p-6 flex justify-center items-center h-96">
+                    <p class="text-gray-500">Video Embed Placeholder</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-page" class="py-20 hidden">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12">About Me</h2>
+                <div class="bg-gray-800 p-8 md:p-12 rounded-2xl shadow-xl border border-gray-700">
+                    <p class="text-lg md:text-xl italic text-gray-300 mb-6">
+                        "Your bio here. Talk about your passion, experience, and what you love to do."
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <img src="https://placehold.co/60x60/2d3748/ffffff?text=User" alt="Your Photo" class="w-16 h-16 rounded-full object-cover border-2 border-gray-700">
+                        <div>
+                            <p class="font-bold">Your Name</p>
+                            <p class="text-sm text-gray-400">Your Title / Role</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('main section');
+
+        // Function to show a specific page and hide others
+        function showPage(pageId) {
+            // Hide all sections
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            // Show the selected section
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+        }
+
+        // Add event listeners to navigation links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                // The dropdown links are still anchors for smooth scrolling within the "Selected Work" section.
+                if (pageId) {
+                    showPage(pageId + '-page');
+                    // Scroll to the top of the newly shown page
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Initially show the hero section
+        showPage('hero-section');
+    </script>
 </body>
 </html>
