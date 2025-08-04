@@ -10,11 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Define a custom CSS variable for the font size calculation */
-        :root {
-            --site-navigation-font-font-size-value: 2;
-        }
-
         /* Apply 'Montserrat' font, uppercase transformation, and a fixed background image to the body */
         body {
             font-family: 'Montserrat', sans-serif;
@@ -46,23 +41,18 @@
                 padding-bottom: 0.7vw;
             }
 
-            /* Apply dynamic font size with a 12px base */
-            .nav-link {
-                font-size: calc((var(--site-navigation-font-font-size-value) - 1) * 1.2vw + 12px);
-            }
-
             /* Set the gap between desktop navigation links to 2vw */
             .desktop-nav-links {
                 gap: 2vw;
             }
         }
-        
     </style>
 </head>
 <body class="antialiased">
 
     <header class="site-header sticky top-0 z-50">
-        <nav class="container mx-auto px-6 flex justify-between items-center">
+        <!-- Removed 'container' and 'mx-auto' and added 'w-full' to allow the nav bar to stretch to the edges -->
+        <nav class="w-full px-6 flex justify-between items-center">
             <!-- Logo link to home page -->
             <a href="#" data-page="hero-section" class="nav-link font-bold text-white">Sebastián Valdivieso Jáuregui</a>
             <!-- Desktop Navigation -->
@@ -71,10 +61,11 @@
                     <a href="#" data-page="selected-work" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">
                         Selected Work
                     </a>
-                    <div class="absolute left-0 mt-2 w-48 rounded-lg shadow-lg py-0 hidden group-hover:block">
-                        <a href="#narrative" class="block px-4 py-0 hover:bg-gray-700 transition-colors duration-300">Narrative</a>
-                        <a href="#music-video" class="block px-4 py-0 hover:bg-gray-700 transition-colors duration-300">Music Video</a>
-                        <a href="#commercial" class="block px-4 py-0 hover:bg-gray-700 transition-colors duration-300">Commercial</a>
+                    <!-- The dropdown menu now has no background, border, or shadow -->
+                    <div class="absolute left-0 top-full w-48 hidden group-hover:block">
+                        <a href="#narrative" class="block py-1 text-white hover:text-pink-400 transition-colors duration-300">Narrative</a>
+                        <a href="#music-video" class="block py-1 text-white hover:text-pink-400 transition-colors duration-300">Music Video</a>
+                        <a href="#commercial" class="block py-1 text-white hover:text-pink-400 transition-colors duration-300">Commercial</a>
                     </div>
                 </div>
                 <a href="#" data-page="reel" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">Reel</a>
