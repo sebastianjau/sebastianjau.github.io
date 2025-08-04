@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Landing Page</title>
+    <!-- Updated the title of the page -->
+    <title>SEBASTIÁN VALDIVIESO JÁUREGUI | Cinematographer | Austin, TX</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -168,105 +169,4 @@
                     <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                         <img src="https://placehold.co/60x60/2d3748/ffffff?text=User" alt="Your Photo" class="w-16 h-16 rounded-full object-cover border-2 border-gray-700">
                         <div>
-                            <p class="font-bold">Your Name</p>
-                            <p class="text-sm text-gray-400">Your Title / Role</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Get all navigation links
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('main section');
-        
-        // Mobile menu elements
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .sub-nav-link');
-        const mainMenu = document.getElementById('main-menu');
-        const subMenu = document.getElementById('sub-menu');
-        const backToMainButton = document.getElementById('back-to-main');
-
-        // Function to show a specific page and hide others
-        function showPage(pageId) {
-            // Hide all sections
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            // Show the selected section
-            const targetSection = document.getElementById(pageId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-            }
-        }
-
-        // Add event listeners for desktop navigation links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                // The dropdown links are still anchors for smooth scrolling within the "Selected Work" section.
-                if (pageId) {
-                    showPage(pageId);
-                    // Scroll to the top of the newly shown page
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Initially show the hero section
-        showPage('hero-section');
-
-        // Mobile Menu Event Listeners
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-        });
-
-        closeMobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
-            // Reset to main menu view when closing
-            mainMenu.classList.remove('translate-x-full');
-            subMenu.classList.add('translate-x-full');
-        });
-
-        // Handle "Selected Work" link in mobile menu
-        document.querySelector('.mobile-nav-link[data-page="selected-work"]').addEventListener('click', (e) => {
-            e.preventDefault();
-            mainMenu.classList.add('translate-x-full');
-            subMenu.classList.remove('translate-x-full');
-        });
-        
-        // Handle "Back" button in sub-menu
-        backToMainButton.addEventListener('click', () => {
-            mainMenu.classList.remove('translate-x-full');
-            subMenu.classList.add('translate-x-full');
-        });
-
-        // Handle clicks on mobile sub-menu links
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.dataset.page !== 'selected-work') {
-                    // Close mobile menu and navigate to page
-                    mobileMenu.classList.add('translate-x-full');
-                    showPage(this.dataset.page + '-page');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else if (this.href && this.href.includes('#')) {
-                     // For sub-menu links, close the menu and navigate to the section
-                    mobileMenu.classList.add('translate-x-full');
-                    showPage('selected-work-page');
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-    </script>
-</body>
-</html>
+                            <p class="font-bold">Your N
