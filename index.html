@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <style>
-        /* Apply 'Montserrat' font and a fixed background image to the body */
+        /* Apply 'Montserrat' font, uppercase transformation, and a fixed background image to the body */
         body {
             font-family: 'Montserrat', sans-serif;
             color: #e2e8f0; /* Light gray text for the main content */
+            text-transform: uppercase; /* All text will be in uppercase */
             
             /* Set the background image and properties */
             background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/Cover.webp');
@@ -35,15 +36,15 @@
 </head>
 <body class="antialiased">
 
-    <header class="py-4 sticky top-0 z-50 bg-[#0d1117] bg-opacity-90 backdrop-filter backdrop-blur-lg">
+    <header class="py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-bold text-white">Sebastián Valdivieso Jáuregui</div>
+            <div class="font-bold text-white">Sebastián Valdivieso Jáuregui</div>
             <div class="space-x-6 hidden md:flex items-center">
                 <div class="relative group">
                     <a href="#" data-page="selected-work" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">
                         Selected Work
                     </a>
-                    <div class="absolute left-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg py-2 hidden group-hover:block">
+                    <div class="absolute left-0 mt-2 w-48 rounded-lg shadow-lg py-2 hidden group-hover:block">
                         <a href="#narrative" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-300 rounded-lg">Narrative</a>
                         <a href="#music-video" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-300 rounded-lg">Music Video</a>
                         <a href="#commercial" class="block px-4 py-2 hover:bg-gray-700 transition-colors duration-300 rounded-lg">Commercial</a>
