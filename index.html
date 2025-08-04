@@ -39,6 +39,7 @@
     <header class="py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-6 flex justify-between items-center">
             <div class="font-bold text-white">Sebastián Valdivieso Jáuregui</div>
+            <!-- Desktop Navigation -->
             <div class="space-x-6 hidden md:flex items-center">
                 <div class="relative group">
                     <a href="#" data-page="selected-work" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">
@@ -53,8 +54,45 @@
                 <a href="#" data-page="reel" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">Reel</a>
                 <a href="#" data-page="about" class="nav-link text-white hover:text-pink-400 transition-colors duration-300">About</a>
             </div>
+            <!-- Mobile Hamburger Menu Icon -->
+            <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
         </nav>
     </header>
+
+    <!-- Mobile Full-Page Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-full">
+        <div class="h-full flex items-center justify-center relative">
+            <!-- Close Button -->
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Menu Containers -->
+            <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                <!-- Main Menu -->
+                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">
+                        Selected Work
+                    </a>
+                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Reel</a>
+                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">About</a>
+                </div>
+                <!-- Sub Menu for Selected Work -->
+                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
+                    <!-- Back button -->
+                    <button id="back-to-main" class="absolute top-10 left-10 text-white flex items-center space-x-2 focus:outline-none">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    <a href="#narrative" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Narrative</a>
+                    <a href="#music-video" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Music Video</a>
+                    <a href="#commercial" class="sub-nav-link text-white hover:text-pink-400 text-3xl font-bold transition-colors duration-300">Commercial</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <main class="container mx-auto px-6">
         <section id="hero-section" class="py-20 md:py-32 text-center">
@@ -126,6 +164,15 @@
         // Get all navigation links
         const navLinks = document.querySelectorAll('.nav-link');
         const sections = document.querySelectorAll('main section');
+        
+        // Mobile menu elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .sub-nav-link');
+        const mainMenu = document.getElementById('main-menu');
+        const subMenu = document.getElementById('sub-menu');
+        const backToMainButton = document.getElementById('back-to-main');
 
         // Function to show a specific page and hide others
         function showPage(pageId) {
@@ -140,7 +187,7 @@
             }
         }
 
-        // Add event listeners to navigation links
+        // Add event listeners for desktop navigation links
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -156,6 +203,53 @@
 
         // Initially show the hero section
         showPage('hero-section');
+
+        // Mobile Menu Event Listeners
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            // Reset to main menu view when closing
+            mainMenu.classList.remove('translate-x-full');
+            subMenu.classList.add('translate-x-full');
+        });
+
+        // Handle "Selected Work" link in mobile menu
+        document.querySelector('.mobile-nav-link[data-page="selected-work"]').addEventListener('click', (e) => {
+            e.preventDefault();
+            mainMenu.classList.add('translate-x-full');
+            subMenu.classList.remove('translate-x-full');
+        });
+        
+        // Handle "Back" button in sub-menu
+        backToMainButton.addEventListener('click', () => {
+            mainMenu.classList.remove('translate-x-full');
+            subMenu.classList.add('translate-x-full');
+        });
+
+        // Handle clicks on mobile sub-menu links
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.dataset.page !== 'selected-work') {
+                    // Close mobile menu and navigate to page
+                    mobileMenu.classList.add('translate-x-full');
+                    showPage(this.dataset.page + '-page');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else if (this.href && this.href.includes('#')) {
+                     // For sub-menu links, close the menu and navigate to the section
+                    mobileMenu.classList.add('translate-x-full');
+                    showPage('selected-work-page');
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
     </script>
 </body>
 </html>
