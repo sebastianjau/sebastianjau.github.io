@@ -61,26 +61,26 @@
     <header id="main-header" class="site-header fixed w-full top-0 z-50 bg-white transition-transform duration-300 transform">
         <nav class="w-full px-6 flex justify-between items-center">
             <!-- Logo link with black text and Europa font -->
-            <!-- Added tracking-wide for increased letter spacing -->
-            <a href="index.html" class="nav-link logo-font text-black tracking-wide">Sebastián Valdivieso Jáuregui</a>
+            <a href="index.html" class="nav-link logo-font text-black">Sebastián Valdivieso Jáuregui</a>
             <!-- Desktop Navigation -->
             <div class="desktop-nav-links hidden md:flex items-center">
                 <div class="relative group">
-                    <!-- Added tracking-wide for increased letter spacing -->
-                    <a href="selected-work.html" class="nav-link text-black hover:text-black transition-colors duration-300 tracking-wide">
+                    <!-- Added hover:underline class for the underline effect on hover -->
+                    <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
                         Selected Work
                     </a>
                     <!-- Dropdown menu with a light gray background and black text -->
-                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block bg-white rounded-lg shadow-lg py-2">
-                        <!-- Added tracking-wide for increased letter spacing -->
-                        <a href="narrative.html" class="block text-black px-4 py-2 text-right tracking-wide">Narrative</a>
-                        <a href="music-video.html" class="block text-black px-4 py-2 text-right tracking-wide">Music Video</a>
-                        <a href="commercial.html" class="block text-black px-4 py-2 text-right tracking-wide">Commercial</a>
+                    <!-- Removed bg-white class for a transparent background -->
+                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
+                        <!-- Changed py-1 to py-0 to reduce the gap between links -->
+                        <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">Narrative</a>
+                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">Music Video</a>
+                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">Commercial</a>
                     </div>
                 </div>
-                <!-- Added tracking-wide for increased letter spacing -->
-                <a href="reel.html" class="nav-link text-black hover:text-black transition-colors duration-300 tracking-wide">Reel</a>
-                <a href="about.html" class="nav-link text-black hover:text-black transition-colors duration-300 tracking-wide">About</a>
+                <!-- Added hover:underline class for the underline effect on hover -->
+                <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
+                <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">About</a>
             </div>
             <!-- Mobile Hamburger Menu Icon -->
             <button id="mobile-menu-button" class="text-black md:hidden focus:outline-none">
@@ -101,12 +101,11 @@
             <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
                 <!-- Main Menu with black text -->
                 <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <!-- Added tracking-wide for increased letter spacing -->
-                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300 tracking-wide">
+                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
                         Selected Work
                     </a>
-                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300 tracking-wide">Reel</a>
-                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300 tracking-wide">About</a>
+                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
+                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
                 </div>
                 <!-- Sub Menu for Selected Work -->
                 <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
@@ -115,10 +114,9 @@
                         <i class="fas fa-arrow-left"></i>
                         <span>Back</span>
                     </button>
-                    <!-- Added tracking-wide for increased letter spacing -->
-                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300 tracking-wide">Narrative</a>
-                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300 tracking-wide">Music Video</a>
-                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300 tracking-wide">Commercial</a>
+                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
+                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
+                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
                 </div>
             </div>
         </div>
