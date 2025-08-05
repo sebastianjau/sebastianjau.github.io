@@ -21,8 +21,8 @@
             text-transform: uppercase; /* All text will be in uppercase */
             font-size: 1.2rem; /* Set base font size for the body to 1.2rem */
             
-            /* Set the background image and properties */
-            background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/Cover.webp');
+            /* Set the background image and properties. Corrected the URL for the image. */
+            background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/main/Cover.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -71,32 +71,32 @@
 </head>
 <body class="antialiased">
 
-    <header class="site-header sticky top-0 z-50">
-        <!-- Removed 'container' and 'mx-auto' and added 'w-full' to allow the nav bar to stretch to the edges -->
+    <!-- Navigation Bar -->
+    <!-- Added 'fixed', 'w-full', and 'transition-transform' classes for the new scroll behavior -->
+    <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform">
         <nav class="w-full px-6 flex justify-between items-center">
             <!-- Logo link to home page. Removed 'font-bold' class to make the logo font normal. -->
-            <a href="index.html" data-page="hero-section" class="nav-link logo-font text-white">Sebastián Valdivieso Jáuregui</a>
+            <!-- Updated href to point to index.html -->
+            <a href="index.html" class="nav-link logo-font text-white">Sebastián Valdivieso Jáuregui</a>
             <!-- Desktop Navigation -->
             <div class="desktop-nav-links hidden md:flex items-center">
                 <div class="relative group">
-                    <!-- Changed hover color to white and removed text-xs class -->
-                    <a href="selected-work.html" data-page="selected-work" class="nav-link text-white hover:text-white transition-colors duration-300">
+                    <!-- Updated href to point to selected-work.html -->
+                    <a href="selected-work.html" class="nav-link text-white hover:text-white transition-colors duration-300">
                         Selected Work
                     </a>
                     <!-- The dropdown menu now has no background, border, or shadow. Changed 'left-0' to 'right-0' to align it to the right. -->
                     <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block">
-                        <!-- Removed 'py-1' from each link to make them closer vertically -->
-                        <a href="#narrative" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
-                        <!-- Removed 'py-1' from each link to make them closer vertically -->
-                        <a href="#music-video" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
-                        <!-- Removed 'py-1' from each link to make them closer vertically -->
-                        <a href="#commercial" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
+                        <!-- Links for scrolling to specific sections on a separate page -->
+                        <a href="selected-work.html#narrative" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
+                        <a href="selected-work.html#music-video" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
+                        <a href="selected-work.html#commercial" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
                     </div>
                 </div>
-                <!-- Changed hover color to white and removed text-xs class -->
-                <a href="#" data-page="reel" class="nav-link text-white hover:text-white transition-colors duration-300">Reel</a>
-                <!-- Changed hover color to white and removed text-xs class -->
-                <a href="#" data-page="about" class="nav-link text-white hover:text-white transition-colors duration-300">About</a>
+                <!-- Updated href to point to reel.html -->
+                <a href="reel.html" class="nav-link text-white hover:text-white transition-colors duration-300">Reel</a>
+                <!-- Updated href to point to about.html -->
+                <a href="about.html" class="nav-link text-white hover:text-white transition-colors duration-300">About</a>
             </div>
             <!-- Mobile Hamburger Menu Icon -->
             <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
@@ -117,28 +117,14 @@
             <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
                 <!-- Main Menu -->
                 <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <!-- Changed hover color to white -->
-                    <a href="#" data-page="selected-work" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">
+                    <!-- Updated href to point to selected-work.html -->
+                    <a href="selected-work.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">
                         Selected Work
                     </a>
-                    <!-- Changed hover color to white -->
-                    <a href="#" data-page="reel" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
-                    <!-- Changed hover color to white -->
-                    <a href="#" data-page="about" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
-                </div>
-                <!-- Sub Menu for Selected Work -->
-                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
-                    <!-- Back button -->
-                    <button id="back-to-main" class="absolute top-10 left-10 text-white flex items-center space-x-2 focus:outline-none">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Back</span>
-                    </button>
-                    <!-- Changed hover color to white -->
-                    <a href="#narrative" class="sub-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Narrative</a>
-                    <!-- Changed hover color to white -->
-                    <a href="#music-video" class="sub-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Music Video</a>
-                    <!-- Changed hover color to white -->
-                    <a href="#commercial" class="sub-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Commercial</a>
+                    <!-- Updated href to point to reel.html -->
+                    <a href="reel.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
+                    <!-- Updated href to point to about.html -->
+                    <a href="about.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
                 </div>
             </div>
         </div>
@@ -147,163 +133,38 @@
     <main class="container mx-auto px-6">
         <section id="hero-section" class="py-20 md:py-32 text-center">
             <div class="max-w-4xl mx-auto">
-                </div>
-        </section>
-
-        <section id="selected-work-page" class="py-20 hidden">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Selected Work</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div id="narrative" class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
-                        <i class="fas fa-film text-3xl text-pink-400 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Narrative Project</h3>
-                        <p class="text-gray-400">
-                            A short description of your narrative film project.
-                        </p>
-                    </div>
-                    <div id="music-video" class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
-                        <i class="fas fa-music text-3xl text-purple-400 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Music Video Project</h3>
-                        <p class="text-gray-400">
-                            A short description of your music video project.
-                        </p>
-                    </div>
-                    <div id="commercial" class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
-                        <i class="fas fa-building text-3xl text-indigo-400 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Commercial Project</h3>
-                        <p class="text-gray-400">
-                            A short description of your commercial project.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="reel-page" class="py-20 text-center hidden">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12">Reel</h2>
-                <p class="text-lg text-gray-400">
-                    This is where you can embed your video reel.
-                </p>
-                <div class="mt-8 bg-gray-800 rounded-lg p-6 flex justify-center items-center h-96">
-                    <p class="text-gray-500">Video Embed Placeholder</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about-page" class="py-20 hidden">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12">About Me</h2>
-                <div class="bg-gray-800 p-8 md:p-12 rounded-2xl shadow-xl border border-gray-700">
-                    <p class="text-lg md:text-xl italic text-gray-300 mb-6">
-                        "Your bio here. Talk about your passion, experience, and what you love to do."
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                        <img src="https://placehold.co/60x60/2d3748/ffffff?text=User" alt="Your Photo" class="w-16 h-16 rounded-full object-cover border-2 border-gray-700">
-                        <div>
-                            <p class="font-bold">Your Name</p>
-                            <p class="text-sm text-gray-400">Your Title / Role</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
 
     <script>
-        // Get all navigation links
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('main section');
-        
-        // Mobile menu elements
+        // Header and scroll logic variables
+        const header = document.getElementById('main-header');
+        let lastScrollY = window.scrollY;
+
+        // New scroll event listener to hide/show the header
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.classList.add('-translate-y-full'); // Hide the header
+            } else if (window.scrollY < lastScrollY) {
+                header.classList.remove('-translate-y-full'); // Show the header
+            }
+            lastScrollY = window.scrollY;
+        });
+
+        // Mobile Menu Event Listeners
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .sub-nav-link');
-        const mainMenu = document.getElementById('main-menu');
-        const subMenu = document.getElementById('sub-menu');
-        const backToMainButton = document.getElementById('back-to-main');
-
-        // Function to show a specific page and hide others
-        function showPage(pageId) {
-            // Hide all sections
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            // Show the selected section
-            const targetSection = document.getElementById(pageId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-            }
-        }
-
-        // Add event listeners for desktop navigation links
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                // The dropdown links are still anchors for smooth scrolling within the "Selected Work" section.
-                if (pageId) {
-                    showPage(pageId);
-                    // Scroll to the top of the newly shown page
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Initially show the hero section
-        showPage('hero-section');
-
-        // Mobile Menu Event Listeners
+        
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
         });
 
         closeMobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
-            // Reset to main menu view when closing
-            mainMenu.classList.remove('translate-x-full');
-            subMenu.classList.add('translate-x-full');
-        });
-
-        // Handle "Selected Work" link in mobile menu
-        document.querySelector('.mobile-nav-link[data-page="selected-work"]').addEventListener('click', (e) => {
-            e.preventDefault();
-            mainMenu.classList.add('translate-x-full');
-            subMenu.classList.remove('translate-x-full');
-        });
-        
-        // Handle "Back" button in sub-menu
-        backToMainButton.addEventListener('click', () => {
-            mainMenu.classList.remove('translate-x-full');
-            subMenu.classList.add('translate-x-full');
-        });
-
-        // Handle clicks on mobile sub-menu links
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                if (this.dataset.page !== 'selected-work') {
-                    // Close mobile menu and navigate to page
-                    mobileMenu.classList.add('translate-x-full');
-                    showPage(this.dataset.page + '-page');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else if (this.href && this.href.includes('#')) {
-                     // For sub-menu links, close the menu and navigate to the section
-                    mobileMenu.classList.add('translate-x-full');
-                    showPage('selected-work-page');
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
         });
 
     </script>
 </body>
 </html>
-
-
-
-
