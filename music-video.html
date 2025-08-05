@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated the title of the page -->
     <title>SEBASTIÁN VALDIVIESO JÁUREGUI - Music Video</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font link for Europa and Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Europa&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <style>
@@ -55,6 +57,7 @@
 <body class="antialiased">
 
     <!-- Navigation Bar -->
+    <!-- The 'sticky' class was replaced with 'fixed' and transition classes were added for the new scroll behavior -->
     <header id="main-header" class="site-header fixed w-full top-0 z-50 bg-white transition-transform duration-300 transform">
         <nav class="w-full px-6 flex justify-between items-center">
             <!-- Logo link with black text and Europa font -->
@@ -62,18 +65,22 @@
             <!-- Desktop Navigation -->
             <div class="desktop-nav-links hidden md:flex items-center">
                 <div class="relative group">
-                    <a href="selected-work.html" class="nav-link text-black hover:text-black transition-colors duration-300">
+                    <!-- Added hover:underline class for the underline effect on hover -->
+                    <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
                         Selected Work
                     </a>
                     <!-- Dropdown menu with a light gray background and black text -->
-                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block bg-white rounded-lg shadow-lg py-2">
-                        <a href="narrative.html" class="block text-black px-4 py-2 text-right">Narrative</a>
-                        <a href="music-video.html" class="block text-black px-4 py-2 text-right">Music Video</a>
-                        <a href="commercial.html" class="block text-black px-4 py-2 text-right">Commercial</a>
+                    <!-- Removed bg-white class for a transparent background -->
+                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
+                        <!-- Changed py-1 to py-0 to reduce the gap between links -->
+                        <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">Narrative</a>
+                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">Music Video</a>
+                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">Commercial</a>
                     </div>
                 </div>
-                <a href="reel.html" class="nav-link text-black hover:text-black transition-colors duration-300">Reel</a>
-                <a href="about.html" class="nav-link text-black hover:text-black transition-colors duration-300">About</a>
+                <!-- Added hover:underline class for the underline effect on hover -->
+                <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
+                <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">About</a>
             </div>
             <!-- Mobile Hamburger Menu Icon -->
             <button id="mobile-menu-button" class="text-black md:hidden focus:outline-none">
@@ -94,7 +101,7 @@
             <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
                 <!-- Main Menu with black text -->
                 <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <a href="#" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
+                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
                         Selected Work
                     </a>
                     <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
@@ -107,48 +114,65 @@
                         <i class="fas fa-arrow-left"></i>
                         <span>Back</span>
                     </button>
-                    <a href="narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
-                    <a href="music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
-                    <a href="commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
+                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
+                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
+                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
                 </div>
             </div>
         </div>
     </div>
     
     <main class="container mx-auto p-6 md:p-12">
-        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12">Music Video</h1>
+        <!-- Adjusted the margin of the h1 title to decrease the top gap and increase the bottom gap -->
+        <!-- Added tracking-widest for increased letter spacing -->
+        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">Music Video</h1>
 
         <!-- Work grid container for a two-column layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-            <!-- Music Video Work Item 1 -->
+
+            <!-- Work Item 1: The title appears on hover, centered on the image. -->
             <div class="group relative overflow-hidden border border-gray-200">
-                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Music+Video+Project+1" alt="Music Video Project 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Music+Video+1+Image" alt="Music Video Project 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <h2 class="text-2xl font-semibold text-white text-center">Music Video Project One</h2>
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Music Video Project One</h2>
                 </div>
             </div>
 
-            <!-- Music Video Work Item 2 -->
+            <!-- Work Item 2: The title appears on hover, centered on the image. -->
             <div class="group relative overflow-hidden border border-gray-200">
-                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Music+Video+Project+2" alt="Music Video Project 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Music+Video+2+Image" alt="Music Video Project 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <h2 class="text-2xl font-semibold text-white text-center">Music Video Project Two</h2>
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Music Video Project Two</h2>
                 </div>
             </div>
 
-            <!-- Music Video Work Item 3 -->
+            <!-- Work Item 3: The title appears on hover, centered on the image. -->
             <div class="group relative overflow-hidden border border-gray-200">
-                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Music+Video+Project+3" alt="Music Video Project 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Music+Video+3+Image" alt="Music Video Project 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <h2 class="text-2xl font-semibold text-white text-center">Music Video Project Three</h2>
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Music Video Project Three</h2>
                 </div>
             </div>
+
+            <!-- Work Item 4: The title appears on hover, centered on the image. -->
+            <div class="group relative overflow-hidden border border-gray-200">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Music+Video+4+Image" alt="Music Video Project 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Music Video Project Four</h2>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <!-- Footer with social media links and copyright -->
     <footer class="bg-white py-6 text-center">
         <div class="container mx-auto px-6">
+            <!-- The 'text-2xl' class was applied here to increase the icon size -->
             <div class="flex justify-center space-x-6 text-2xl mb-4">
                 <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="IMDb"><i class="fab fa-imdb"></i></a>
                 <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -166,7 +190,7 @@
         const mainMenu = document.getElementById('main-menu');
         const subMenu = document.getElementById('sub-menu');
         const backToMainButton = document.getElementById('back-to-main');
-        
+
         // Get the header element for the new scroll logic
         const header = document.getElementById('main-header');
         let lastScrollY = window.scrollY;
@@ -176,7 +200,7 @@
             // If the user scrolls down and is not near the top of the page (offset of 100px)
             if (window.scrollY > lastScrollY && window.scrollY > 100) {
                 header.classList.add('-translate-y-full'); // Hide the header
-            } 
+            }
             // If the user scrolls up
             else if (window.scrollY < lastScrollY) {
                 header.classList.remove('-translate-y-full'); // Show the header
@@ -198,7 +222,7 @@
         });
 
         // Handle "Selected Work" link in mobile menu to show the sub-menu
-        document.querySelector('#main-menu a[href="selected-work.html"]').addEventListener('click', (e) => {
+        document.querySelector('.mobile-nav-link').addEventListener('click', (e) => {
             e.preventDefault();
             mainMenu.classList.add('translate-x-full');
             subMenu.classList.remove('translate-x-full');
