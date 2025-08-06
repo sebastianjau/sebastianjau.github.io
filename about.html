@@ -159,5 +159,186 @@
                     <p>
                         I love watching movies, walking in nature, and hiking; I see them as spaces to breathe, reconnect with myself, and be aware of everything happening around me. Just like on a set, mindfulness is essential to everything I do.
                     </p>
-                    <p>
-                        To me, telling stories is about building a community, being able to contribute from my experiences as a human being, and discovering a new part of myself within them. Although I'm very technical, I like to leave room for emotions because I believe cinema is a vast empathy machine capable of moving people and making them feel. The key to it is allowing ourselves to be vulnerable within it. Through it, we can control what is seen and w
+                   <p>
+
+                        To me, telling stories is about building a community, being able to contribute from my experiences as a human being, and discovering a new part of myself within them. Although I'm very technical, I like to leave room for emotions because I believe cinema is a vast empathy machine capable of moving people and making them feel. The key to it is allowing ourselves to be vulnerable within it. Through it, we can control what is seen and what is not, whether it's a frame, an experience, lights, or emotions because ultimately everything contributes to the evolution of a story, but as filmmakers, we decide what remains in the final cut.
+
+                    </p>
+
+                    <p>
+
+                        I graduated with an MFA in Film Production at the University of Texas. I have achieved various accomplishments throughout my career, both inside and outside the university. Among the most recent are awards such as the DGA Student Film Award, special mentions from OutFest Los Angeles, BFI Future Film Festival, and the Yugo BAFTA Student Awards. I have also been selected for international festivals like the International Film Festival Rotterdam, Palm Springs International ShortFest, Slamdance Film Festival, New York Latino Film Festival, and New Orleans Film Festival. Through each one of these experiences, I have learned more about collaboration and the importance of community.
+
+                    </p>
+
+                    <p>
+
+                        Currently, I'm looking for new worlds to connect with to tell new stories.
+
+                    </p>
+
+                    <p class="mt-8 font-bold">
+
+                        sebastianjau@gmail.com
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- Footer with social media links and copyright -->
+
+    <footer class="bg-white py-6 text-center">
+
+        <div class="container mx-auto px-6">
+
+            <!-- The 'text-2xl' class was applied here to increase the icon size -->
+
+            <div class="flex justify-center space-x-6 text-2xl mb-4">
+
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="IMDb"><i class="fab fa-imdb"></i></a>
+
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+
+            </div>
+
+            <p class="text-gray-600 text-xs">© 2020 Sebastián Valdivieso Jáuregui. All rights reserved.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        // Get mobile menu elements
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+        const mainMenu = document.getElementById('main-menu');
+
+        const subMenu = document.getElementById('sub-menu');
+
+        const backToMainButton = document.getElementById('back-to-main');
+
+
+
+        // Get the header element for the new scroll logic
+
+        const header = document.getElementById('main-header');
+
+        let lastScrollY = window.scrollY;
+
+
+
+        // Add a scroll event listener to the window
+
+        window.addEventListener('scroll', () => {
+
+            // If the user scrolls down and is not near the top of the page (offset of 100px)
+
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+
+                header.classList.add('-translate-y-full'); // Hide the header
+
+            }
+
+            // If the user scrolls up
+
+            else if (window.scrollY < lastScrollY) {
+
+                header.classList.remove('-translate-y-full'); // Show the header
+
+            }
+
+            // Update the last scroll position
+
+            lastScrollY = window.scrollY;
+
+        });
+
+
+
+        // Mobile Menu Event Listeners
+
+        mobileMenuButton.addEventListener('click', () => {
+
+            mobileMenu.classList.remove('translate-x-full');
+
+        });
+
+
+
+        closeMobileMenuButton.addEventListener('click', () => {
+
+            mobileMenu.classList.add('translate-x-full');
+
+            // Reset to main menu view when closing
+
+            mainMenu.classList.remove('translate-x-full');
+
+            subMenu.classList.add('translate-x-full');
+
+        });
+
+
+
+        // Handle "Selected Work" link in mobile menu to show the sub-menu
+
+        document.querySelector('.mobile-nav-link').addEventListener('click', (e) => {
+
+            e.preventDefault();
+
+            mainMenu.classList.add('translate-x-full');
+
+            subMenu.classList.remove('translate-x-full');
+
+        });
+
+        
+
+        // Handle "Back" button in sub-menu
+
+        backToMainButton.addEventListener('click', () => {
+
+            mainMenu.classList.remove('translate-x-full');
+
+            subMenu.classList.add('translate-x-full');
+
+        });
+
+
+
+        // Close mobile menu when a sub-menu link is clicked
+
+        const subNavLinks = document.querySelectorAll('.sub-nav-link');
+
+        subNavLinks.forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                mobileMenu.classList.add('translate-x-full');
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
