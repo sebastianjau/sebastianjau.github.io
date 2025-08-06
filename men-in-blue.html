@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated the title of the page -->
+    <title>SEBASTIÁN VALDIVIESO JÁUREGUI - Project Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font link for Europa and Montserrat with various weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Europa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Set the body to have a white background and black text */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #000000; /* Black text for the main content */
+            background-color: #ffffff; /* White background */
+            text-transform: uppercase;
+        }
+
+        /* Set the logo font to Europa and remove any bold styling */
+        .logo-font {
+            font-family: 'Europa', sans-serif;
+        }
+
+        /* Set font for all other navigation links to Montserrat */
+        .nav-link, .dropdown-links a, .mobile-nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: #000000; /* Black text for nav links */
+            font-weight: 400; /* Ensure font-weight is 400 */
+        }
+
+        /* Hide scrollbar for a cleaner look */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        /* Apply specific desktop styles using a media query */
+        @media screen and (min-width: 768px) {
+            /* Adjust the navigation bar padding to 1.4vw total */
+            .site-header {
+                padding-top: 0.7vw;
+                padding-bottom: 0.7vw;
+            }
+            .desktop-nav-links {
+                gap: 2vw; /* Matched gap to landing page */
+            }
+            /* Apply 6vw padding to the nav element for left and right */
+            nav {
+                padding-left: 6vw;
+                padding-right: 6vw;
+            }
+        }
+        /* Custom style for the biography text to set font size to 1.2rem */
+        /* Updated font size from 1rem to 1.2rem */
+        /* Custom style for the project description text */
+        .project-description p {
+            font-size: 1rem; /* Adjust as needed */
+            line-height: 1; /* Changed line-height from 1.6 to 1 */
+        }
+
+        /* Carousel Wrapper for layout of arrows and image */
+        .carousel-wrapper {
+            display: flex;
+            align-items: center; /* Vertically center the items */
+            justify-content: center; /* Center the whole wrapper */
+            max-width: 1000px; /* Adjust as needed to give space for arrows */
+            margin: auto;
+            gap: 1rem; /* Space between arrows and carousel */
+        }
+
+        /* Carousel specific styles */
+        .carousel-container {
+            position: relative;
+            width: 100%; /* Ensure it takes full width of its flex item */
+            margin: auto;
+        }
+
+        .carousel-slide {
+            display: none; /* Hide all slides by default */
+            width: 100%;
+            height: auto;
+            /* Removed cursor: pointer; as full screen functionality is removed */
+        }
+
+        .carousel-slide.active {
+            display: block; /* Show active slide */
+        }
+
+        /* Carousel buttons - subtle and to the side */
+        .carousel-button {
+            cursor: pointer;
+            position: static; /* No longer absolute within carousel-container */
+            width: auto;
+            padding: 0 5px; /* Subtle padding */
+            color: #000000; /* Black arrows */
+            font-weight: 100; /* Made really thin */
+            font-size: 1.5rem; /* Half the size */
+            transition: color 0.3s ease;
+            border-radius: 0; /* No border radius */
+            user-select: none;
+            background-color: transparent; /* No background */
+        }
+
+        .carousel-button:hover {
+            background-color: transparent; /* Still transparent on hover */
+            color: #333333; /* Slightly darker on hover for subtle effect */
+        }
+
+        /* SVG arrow styling */
+        .carousel-button svg {
+            width: 1.5rem; /* Control SVG size */
+            height: 1.5rem; /* Control SVG size */
+            stroke: currentColor; /* Inherit color from parent */
+            stroke-width: 1px; /* Make the stroke thin */
+            fill: none; /* No fill for the polyline */
+        }
+
+        /* Thumbnail viewport to hide excess thumbnails */
+        .thumbnail-viewport {
+            width: calc((80px + 0.5rem) * 8); /* Show 8 thumbnails (80px width + 0.5rem gap) */
+            margin: 1rem auto 0 auto; /* Center the viewport below the main image */
+            overflow: hidden; /* Hide excess thumbnails */
+        }
+
+        /* Thumbnail strip to enable scrolling */
+        .thumbnail-strip {
+            display: flex;
+            transition: transform 0.3s ease-in-out; /* Smooth scrolling */
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            width: 80px; /* Fixed width for thumbnails */
+            height: 60px; /* Fixed height for thumbnails */
+            object-fit: cover;
+            opacity: 0.5; /* Default opacity changed to 0.5 */
+            transition: opacity 0.3s ease;
+            border: none; /* No border on default thumbnail state */
+            flex-shrink: 0; /* Prevent thumbnails from shrinking */
+            margin-right: 0.5rem; /* Gap between thumbnails */
+        }
+        /* Remove margin-right from the last thumbnail */
+        .thumbnail:last-child {
+            margin-right: 0;
+        }
+
+        /* Opacity appears when active or hovered */
+        .thumbnail.active, .thumbnail:hover {
+            opacity: 1; /* Opacity changed to 1 */
+            border: none; /* Ensure no border on active/hovered */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+ <!-- Navigation Bar -->
+    <!-- The 'sticky' class was replaced with 'fixed' and transition classes were added for the new scroll behavior -->
+    <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform py-8 md:py-[1.4vw]"> <!-- Matched vertical padding -->
+        <nav class="w-full px-6 md:px-[6vw] flex justify-between items-center"> <!-- Matched horizontal padding -->
+            <!-- Logo link with black text and Europa font -->
+            <a href="index.html" class="logo-font text-black">Sebastián Valdivieso Jáuregui</a> <!-- Removed nav-link class -->
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2vw;"> <!-- Matched gap -->
+                <div class="relative group">
+                    <!-- Added hover:underline class for the underline effect on hover -->
+                    <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
+                        Selected Work
+                    </a>
+                    <!-- Dropdown menu with a light gray background and black text -->
+                    <!-- Removed bg-white class for a transparent background -->
+                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
+                        <!-- Changed py-1 to py-0 to reduce the gap between links -->
+                        <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">Narrative</a>
+                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">Music Video</a>
+                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">Commercial</a>
+                    </div>
+                </div>
+                <!-- Added hover:underline class for the underline effect on hover -->
+                <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
+                <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">About</a>
+            </div>
+            <!-- Mobile Hamburger Menu Icon -->
+            <button id="mobile-menu-button" class="text-black md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Full-Page Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform transition-transform duration-300 translate-x-full">
+        <div class="h-full flex items-center justify-center relative">
+            <!-- Close Button -->
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-black focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Menu Containers -->
+            <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                <!-- Main Menu with black text -->
+                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
+                        Selected Work
+                    </a>
+                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
+                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
+                </div>
+                <!-- Sub Menu for Selected Work -->
+                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
+                    <!-- Back button -->
+                    <button id="back-to-main" class="absolute top-10 left-10 text-black flex items-center space-x-2 focus:outline-none">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
+                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
+                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container mx-auto p-6 md:p-12">
+        <!-- Adjusted the margin of the h1 title to decrease the top gap and increase the bottom gap -->
+        <!-- Added tracking-widest for increased letter spacing -->
+        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">Project Title Example</h1>
+        
+        <!-- Changed max-w-4xl to max-w-7xl to make the columns bigger -->
+        <div class="max-w-7xl mx-auto">
+            <!-- Image Carousel Section -->
+            <div class="carousel-wrapper mb-8">
+                <!-- Previous button with SVG -->
+                <a class="carousel-button prev" onclick="plusSlides(-1)">
+                    <svg viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+                        <polyline fill="none" stroke-miterlimit="10" points="7.3,14.7 2.5,8 7.3,1.2 "></polyline>
+                    </svg>
+                </a>
+
+                <div class="carousel-main-content w-full"> <!-- New container for main image and thumbnails -->
+                    <div class="carousel-container">
+                        <!-- Main image slides (19 total) -->
+                        <img class="carousel-slide active" src="https://placehold.co/900x500/e5e7eb/374151?text=Project+Image+1" alt="Project Image 1">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/d1d5db/4b5563?text=Project+Image+2" alt="Project Image 2">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/9ca3af/6b7280?text=Project+Image+3" alt="Project Image 3">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/6b7280/9ca3af?text=Project+Image+4" alt="Project Image 4">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/e5e7eb/374151?text=Project+Image+5" alt="Project Image 5">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/d1d5db/4b5563?text=Project+Image+6" alt="Project Image 6">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/9ca3af/6b7280?text=Project+Image+7" alt="Project Image 7">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/6b7280/9ca3af?text=Project+Image+8" alt="Project Image 8">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/e5e7eb/374151?text=Project+Image+9" alt="Project Image 9">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/d1d5db/4b5563?text=Project+Image+10" alt="Project Image 10">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/9ca3af/6b7280?text=Project+Image+11" alt="Project Image 11">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/6b7280/9ca3af?text=Project+Image+12" alt="Project Image 12">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/e5e7eb/374151?text=Project+Image+13" alt="Project Image 13">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/d1d5db/4b5563?text=Project+Image+14" alt="Project Image 14">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/9ca3af/6b7280?text=Project+Image+15" alt="Project Image 15">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/e5e7eb/374151?text=Project+Image+16" alt="Project Image 16">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/d1d5db/4b5563?text=Project+Image+17" alt="Project Image 17">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/9ca3af/6b7280?text=Project+Image+18" alt="Project Image 18">
+                        <img class="carousel-slide" src="https://placehold.co/900x500/6b7280/9ca3af?text=Project+Image+19" alt="Project Image 19">
+                    </div>
+
+                    <!-- Thumbnail controls -->
+                    <div class="thumbnail-viewport">
+                        <div class="thumbnail-strip" id="thumbnail-strip">
+                            <!-- Original Thumbnails (19 total) with data-original-index -->
+                            <img class="thumbnail original-thumbnail active" data-original-index="1" src="https://placehold.co/80x60/e5e7eb/374151?text=1" onclick="currentSlide(1)" alt="Thumbnail 1">
+                            <img class="thumbnail original-thumbnail" data-original-index="2" src="https://placehold.co/80x60/d1d5db/4b5563?text=2" onclick="currentSlide(2)" alt="Thumbnail 2">
+                            <img class="thumbnail original-thumbnail" data-original-index="3" src="https://placehold.co/80x60/9ca3af/6b7280?text=3" onclick="currentSlide(3)" alt="Thumbnail 3">
+                            <img class="thumbnail original-thumbnail" data-original-index="4" src="https://placehold.co/80x60/6b7280/9ca3af?text=4" onclick="currentSlide(4)" alt="Thumbnail 4">
+                            <img class="thumbnail original-thumbnail" data-original-index="5" src="https://placehold.co/80x60/e5e7eb/374151?text=5" onclick="currentSlide(5)" alt="Thumbnail 5">
+                            <img class="thumbnail original-thumbnail" data-original-index="6" src="https://placehold.co/80x60/d1d5db/4b5563?text=6" onclick="currentSlide(6)" alt="Thumbnail 6">
+                            <img class="thumbnail original-thumbnail" data-original-index="7" src="https://placehold.co/80x60/9ca3af/6b7280?text=7" onclick="currentSlide(7)" alt="Thumbnail 7">
+                            <img class="thumbnail original-thumbnail" data-original-index="8" src="https://placehold.co/80x60/6b7280/9ca3af?text=8" onclick="currentSlide(8)" alt="Thumbnail 8">
+                            <img class="thumbnail original-thumbnail" data-original-index="9" src="https://placehold.co/80x60/e5e7eb/374151?text=9" onclick="currentSlide(9)" alt="Thumbnail 9">
+                            <img class="thumbnail original-thumbnail" data-original-index="10" src="https://placehold.co/80x60/d1d5db/4b5563?text=10" onclick="currentSlide(10)" alt="Thumbnail 10">
+                            <img class="thumbnail original-thumbnail" data-original-index="11" src="https://placehold.co/80x60/9ca3af/6b7280?text=11" onclick="currentSlide(11)" alt="Thumbnail 11">
+                            <img class="thumbnail original-thumbnail" data-original-index="12" src="https://placehold.co/80x60/6b7280/9ca3af?text=12" onclick="currentSlide(12)" alt="Thumbnail 12">
+                            <img class="thumbnail original-thumbnail" data-original-index="13" src="https://placehold.co/80x60/e5e7eb/374151?text=13" onclick="currentSlide(13)" alt="Thumbnail 13">
+                            <img class="thumbnail original-thumbnail" data-original-index="14" src="https://placehold.co/80x60/d1d5db/4b5563?text=14" onclick="currentSlide(14)" alt="Thumbnail 14">
+                            <img class="thumbnail original-thumbnail" data-original-index="15" src="https://placehold.co/80x60/9ca3af/6b7280?text=15" onclick="currentSlide(15)" alt="Thumbnail 15">
+                            <img class="thumbnail original-thumbnail" data-original-index="16" src="https://placehold.co/80x60/e5e7eb/374151?text=16" onclick="currentSlide(16)" alt="Thumbnail 16">
+                            <img class="thumbnail original-thumbnail" data-original-index="17" src="https://placehold.co/80x60/d1d5db/4b5563?text=17" onclick="currentSlide(17)" alt="Thumbnail 17">
+                            <img class="thumbnail original-thumbnail" data-original-index="18" src="https://placehold.co/80x60/9ca3af/6b7280?text=18" onclick="currentSlide(18)" alt="Thumbnail 18">
+                            <img class="thumbnail original-thumbnail" data-original-index="19" src="https://placehold.co/80x60/6b7280/9ca3af?text=19" onclick="currentSlide(19)" alt="Thumbnail 19">
+                        </div>
+                    </div>
+                </div>
+                <!-- Next button with SVG -->
+                <a class="carousel-button next" onclick="plusSlides(1)">
+                    <svg viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);">
+                        <polyline fill="none" stroke-miterlimit="10" points="7.3,14.7 2.5,8 7.3,1.2 "></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Project Description Section -->
+            <div class="text-left text-black project-description normal-case">
+                <h2 class="text-2xl font-bold mb-4">Synopsis</h2>
+                <p class="mb-4">
+                    This section provides a detailed description of the project. You can explain the concept, your role, the challenges faced, and the solutions implemented. This is a great place to elaborate on the creative and technical aspects of your work.
+                </p>
+                <p class="mb-4">
+                    For instance, if this was a narrative film, you might discuss the directorial vision, the lighting choices, or the camera movements used to convey emotion. If it was a music video, you could talk about how the visuals complement the music, the editing style, or any special effects.
+                </p>
+                <p class="mb-4">
+                    Key technologies or equipment used: [List technologies/equipment, e.g., ARRI Alexa, DaVinci Resolve, etc.]
+                </p>
+                <p class="mb-4">
+                    Your specific contribution: [Detail your role and responsibilities, e.g., Director of Photography, Gaffer, etc.]
+                </p>
+                <p class="mb-8">
+                    Feel free to add more paragraphs to fully describe the project and its impact.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Team</h3>
+                        <ul class="list-none p-0 space-y-0">
+                            <li>FEATURING</li>
+                            <li>DIRECTOR, WRITER, EDITOR</li>
+                            <li>PRODUCERS</li>
+                            <li>DIRECTOR OF PHOTOGRAPHY</li>
+                            <li>PRODUCTION DESIGNER</li>
+                            <li>COSTUME DESIGN</li>
+                            <li>SOUND DESIGN</li>
+                            <li>SOUND MIXING</li>
+                            <li>ORIGINAL MUSIC</li>
+                            <li>COLORIST</li>
+                            <li>CO-PRODUCERS</li>
+                            <li>LINE PRODUCERS</li>
+                            <li>GRADING STUDIO</li>
+                            <li>THESIS SUPERVISORS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Awards</h3>
+                        <ul class="list-none p-0 space-y-0">
+                            <li>[Award 1 Name]</li>
+                            <li>[Award 2 Name]</li>
+                            <li>[Award 3 Name]</li>
+                        </ul>
+                        <h3 class="text-xl font-bold mt-8 mb-4">Selections</h3>
+                        <ul class="list-none p-0 space-y-0">
+                            <li>[Festival Selection 1]</li>
+                            <li>[Festival Selection 2]</li>
+                            <li>[Festival Selection 3]</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer with social media links and copyright -->
+    <footer class="bg-white py-6 text-center">
+        <div class="container mx-auto px-6">
+            <!-- The 'text-2xl' class was applied here to increase the icon size -->
+            <div class="flex justify-center space-x-6 text-2xl mb-4">
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="IMDb"><i class="fab fa-imdb"></i></a>
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+            </div>
+            <p class="text-gray-600 text-xs">© 2020 Sebastián Valdivieso Jáuregui. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get mobile menu elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mainMenu = document.getElementById('main-menu');
+        const subMenu = document.getElementById('sub-menu');
+        const backToMainButton = document.getElementById('back-to-main');
+
+        // Get the header element for the new scroll logic
+        const header = document.getElementById('main-header');
+        let lastScrollY = window.scrollY;
+
+        // Add a scroll event listener to the window
+        window.addEventListener('scroll', () => {
+            // If the user scrolls down and is not near the top of the page (offset of 100px)
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.classList.add('-translate-y-full'); // Hide the header
+            }
+            // If the user scrolls up
+            else if (window.scrollY < lastScrollY) {
+                header.classList.remove('-translate-y-full'); // Show the header
+            }
+            // Update the last scroll position
+            lastScrollY = window.scrollY;
+        });
+
+        // Mobile Menu Event Listeners
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            // Reset to main menu view when closing
+            mainMenu.classList.remove('translate-x-full');
+            subMenu.classList.add('translate-x-full');
+        });
+
+        // Handle "Selected Work" link in mobile menu to show the sub-menu
+        document.querySelector('.mobile-nav-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            mainMenu.classList.add('translate-x-full');
+            subMenu.classList.remove('translate-x-full');
+        });
+        
+        // Handle "Back" button in sub-menu
+        backToMainButton.addEventListener('click', () => {
+            mainMenu.classList.remove('translate-x-full');
+            subMenu.classList.add('translate-x-full');
+        });
+
+        // Close mobile menu when a sub-menu link is clicked
+        const subNavLinks = document.querySelectorAll('.sub-nav-link');
+        subNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+
+        // Image Carousel Logic
+        let slideIndex = 1; // Current active slide (1-based index for original slides)
+        const slides = document.getElementsByClassName("carousel-slide");
+        const thumbnailStrip = document.getElementById("thumbnail-strip");
+        const originalThumbnails = Array.from(document.querySelectorAll("#thumbnail-strip .original-thumbnail"));
+        const numOriginalSlides = slides.length;
+        const numVisibleThumbnails = 8; // Number of thumbnails shown in the viewport
+        const thumbnailWidth = 80; // px
+        const thumbnailGap = 8; // px (0.5rem = 8px)
+        const thumbnailTotalWidth = thumbnailWidth + thumbnailGap;
+
+        // Function to clone and append/prepend thumbnails for infinite scroll effect
+        function setupInfiniteThumbnails() {
+            // Clear existing clones if any (for re-runs or multiple initializations)
+            const existingClones = document.querySelectorAll("#thumbnail-strip .clone");
+            existingClones.forEach(clone => clone.remove());
+
+            // Prepend clones of the last 'numVisibleThumbnails' original thumbnails
+            // Ensure we don't try to clone more than available original thumbnails
+            const clonesToPrepend = Math.min(numVisibleThumbnails, numOriginalSlides);
+            for (let i = 0; i < clonesToPrepend; i++) {
+                const cloneIndex = numOriginalSlides - clonesToPrepend + i;
+                const clone = originalThumbnails[cloneIndex].cloneNode(true);
+                clone.classList.add('clone'); // Add a class to identify clones
+                // Set onclick to directly go to the corresponding original slide
+                clone.onclick = () => currentSlide(cloneIndex + 1);
+                thumbnailStrip.prepend(clone);
+            }
+
+            // Append clones of the first 'numVisibleThumbnails' original thumbnails
+            const clonesToAppend = Math.min(numVisibleThumbnails, numOriginalSlides);
+            for (let i = 0; i < clonesToAppend; i++) {
+                const cloneIndex = i;
+                const clone = originalThumbnails[cloneIndex].cloneNode(true);
+                clone.classList.add('clone'); // Add a class to identify clones
+                // Set onclick to directly go to the corresponding original slide
+                clone.onclick = () => currentSlide(cloneIndex + 1);
+                thumbnailStrip.appendChild(clone);
+            }
+        }
+
+        // Call setup once the DOM is loaded
+        document.addEventListener('DOMContentLoaded', setupInfiniteThumbnails);
+
+        let allThumbnails; // Will hold all thumbnails including clones
+
+        // Initial call to showSlides and set initial position
+        document.addEventListener('DOMContentLoaded', () => {
+            allThumbnails = Array.from(document.querySelectorAll("#thumbnail-strip img"));
+            // Set initial position to the first original thumbnail (after prepended clones)
+            const initialTranslateX = (thumbnailStrip.parentElement.clientWidth / 2) - (numVisibleThumbnails * thumbnailTotalWidth + (thumbnailWidth / 2));
+            thumbnailStrip.style.transition = 'none'; // Disable transition for initial jump
+            thumbnailStrip.style.transform = `translateX(${initialTranslateX}px)`;
+            
+            // Re-enable transition after a very short delay to allow the jump to render
+            setTimeout(() => {
+                thumbnailStrip.style.transition = 'transform 0.3s ease-in-out';
+                showSlides(slideIndex); // Show the first slide and activate its thumbnail
+            }, 50); // Small delay to ensure transition is re-enabled
+        });
+
+        function plusSlides(n) {
+            let newSlideIndex = slideIndex + n;
+            showSlides(newSlideIndex);
+        }
+
+        function currentSlide(n) {
+            showSlides(n);
+        }
+
+        function showSlides(n) {
+            // Update the main slide (1-based index for original slides)
+            let targetOriginalSlideIndex = n;
+            
+            // Determine the index in the allThumbnails array (including clones)
+            // The actual original thumbnails start at index `numVisibleThumbnails`
+            let targetThumbnailIndexInStrip = numVisibleThumbnails + (targetOriginalSlideIndex - 1);
+
+            // Handle instant jumps for infinite loop effect *before* updating slideIndex
+            if (n > numOriginalSlides) { // Moving from last original to first (e.g., 19 -> 20, which maps to 1)
+                thumbnailStrip.style.transition = 'transform 0.3s ease-in-out'; // Ensure transition is on for the smooth part
+                let nextThumbnailIndexInStrip = numVisibleThumbnails + (1 - 1); // Index of the first original thumbnail
+                let translateXForNext = (thumbnailStrip.parentElement.clientWidth / 2) - (nextThumbnailIndexInStrip * thumbnailTotalWidth + (thumbnailWidth / 2));
+                
+                thumbnailStrip.style.transform = `translateX(${translateXForNext}px)`;
+                
+                setTimeout(() => {
+                    thumbnailStrip.style.transition = 'none'; // Disable transition for instant jump
+                    let resetTranslateX = (thumbnailStrip.parentElement.clientWidth / 2) - (numVisibleThumbnails * thumbnailTotalWidth + (thumbnailWidth / 2));
+                    thumbnailStrip.style.transform = `translateX(${resetTranslateX}px)`;
+                    
+                    // Re-enable transition after a very short delay
+                    setTimeout(() => {
+                        thumbnailStrip.style.transition = 'transform 0.3s ease-in-out';
+                    }, 50);
+                }, 300); // Match CSS transition duration
+                targetOriginalSlideIndex = 1; // Set the actual slide index to 1
+            } else if (n < 1) { // Moving from first original to last (e.g., 1 -> 0, which maps to 19)
+                thumbnailStrip.style.transition = 'transform 0.3s ease-in-out'; // Ensure transition is on for the smooth part
+                let prevThumbnailIndexInStrip = numVisibleThumbnails + (numOriginalSlides - 1); // Index of the last original thumbnail
+                let translateXForPrev = (thumbnailStrip.parentElement.clientWidth / 2) - (prevThumbnailIndexInStrip * thumbnailTotalWidth + (thumbnailWidth / 2));
+                
+                thumbnailStrip.style.transform = `translateX(${translateXForPrev}px)`;
+
+                setTimeout(() => {
+                    thumbnailStrip.style.transition = 'none'; // Disable transition for instant jump
+                    let resetTranslateX = (thumbnailStrip.parentElement.clientWidth / 2) - ((numVisibleThumbnails + numOriginalSlides - 1) * thumbnailTotalWidth + (thumbnailWidth / 2));
+                    thumbnailStrip.style.transform = `translateX(${resetTranslateX}px)`;
+                    
+                    // Re-enable transition after a very short delay
+                    setTimeout(() => {
+                        thumbnailStrip.style.transition = 'transform 0.3s ease-in-out';
+                    }, 50);
+                }, 300); // Match CSS transition duration
+                targetOriginalSlideIndex = numOriginalSlides; // Set the actual slide index to numOriginalSlides
+            } else {
+                // Normal smooth transition for thumbnails
+                let translateX = (thumbnailStrip.parentElement.clientWidth / 2) - (targetThumbnailIndexInStrip * thumbnailTotalWidth + (thumbnailWidth / 2));
+                thumbnailStrip.style.transform = `translateX(${translateX}px)`;
+            }
+
+            // Update main slide display
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            slides[targetOriginalSlideIndex - 1].classList.add('active');
+
+            // Update active class for thumbnails (after potential jump)
+            for (let i = 0; i < allThumbnails.length; i++) {
+                allThumbnails[i].classList.remove('active');
+            }
+            // Find the correct thumbnail to activate (could be an original or a clone)
+            // The `targetThumbnailIndexInStrip` calculated earlier is the correct one.
+            allThumbnails[targetThumbnailIndexInStrip].classList.add('active');
+
+
+            // Update the global slideIndex to the actual original slide index
+            slideIndex = targetOriginalSlideIndex;
+        }
+
+        // Removed event listener for full screen on the main carousel container
+        // Removed toggleFullScreen function
+    </script>
+</body>
+</html>
