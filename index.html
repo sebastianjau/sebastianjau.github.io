@@ -27,6 +27,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            /* Removed overflow: hidden; as loading animation is removed */
         }
         
         /* Apply 'Montserrat' font and the new font size to the navigation links and logo with font weight 400 */
@@ -69,76 +70,89 @@
             .desktop-nav-links {
                 gap: 2vw;
             }
+
+            /* Apply 6vw padding to the nav element for left and right */
+            nav {
+                padding-left: 6vw;
+                padding-right: 6vw;
+            }
         }
+
+        /* Removed all loading overlay styles */
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navigation Bar -->
-    <!-- Added 'fixed', 'w-full', and 'transition-transform' classes for the new scroll behavior -->
-    <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform">
-        <nav class="w-full px-6 flex justify-between items-center">
-            <!-- Logo link to home page. Removed 'font-bold' class to make the logo font normal. -->
-            <!-- Updated href to point to index.html -->
-            <a href="index.html" class="nav-link logo-font text-white">Sebastián Valdivieso Jáuregui</a>
-            <!-- Desktop Navigation -->
-            <div class="desktop-nav-links hidden md:flex items-center">
-                <div class="relative group">
-                    <!-- Updated href to point to selected-work.html -->
-                    <a href="selected-work.html" class="nav-link text-white hover:text-white transition-colors duration-300">
-                        Selected Work
-                    </a>
-                    <!-- The dropdown menu now has no background, border, or shadow. Changed 'left-0' to 'right-0' to align it to the right. -->
-                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block">
-                        <!-- Links for scrolling to specific sections on a separate page -->
-                        <a href="narrative.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
-                        <a href="music-video.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
-                        <a href="commercial.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
-                    </div>
-                </div>
-                <!-- Updated href to point to reel.html -->
-                <a href="reel.html" class="nav-link text-white hover:text-white transition-colors duration-300">Reel</a>
-                <!-- Updated href to point to about.html -->
-                <a href="about.html" class="nav-link text-white hover:text-white transition-colors duration-300">About</a>
-            </div>
-            <!-- Mobile Hamburger Menu Icon -->
-            <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </nav>
-    </header>
+    <!-- Removed Loading Overlay -->
 
-    <!-- Mobile Full-Page Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-full">
-        <div class="h-full flex items-center justify-center relative">
-            <!-- Close Button -->
-            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            
-            <!-- Menu Containers -->
-            <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
-                <!-- Main Menu -->
-                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <!-- Updated href to point to selected-work.html -->
-                    <a href="selected-work.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">
-                        Selected Work
-                    </a>
+    <!-- Main Content (no longer initially hidden) -->
+    <div id="main-content">
+        <!-- Navigation Bar -->
+        <!-- Added 'fixed', 'w-full', and 'transition-transform' classes for the new scroll behavior -->
+        <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform">
+            <nav class="w-full flex justify-between items-center">
+                <!-- Logo link to home page. Removed 'font-bold' class to make the logo font normal. -->
+                <!-- Updated href to point to index.html -->
+                <a href="index.html" class="nav-link logo-font text-white">Sebastián Valdivieso Jáuregui</a>
+                <!-- Desktop Navigation -->
+                <div class="desktop-nav-links hidden md:flex items-center">
+                    <div class="relative group">
+                        <!-- Updated href to point to selected-work.html -->
+                        <a href="selected-work.html" class="nav-link text-white hover:text-white transition-colors duration-300">
+                            Selected Work
+                        </a>
+                        <!-- The dropdown menu now has no background, border, or shadow. Changed 'left-0' to 'right-0' to align it to the right. -->
+                        <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block">
+                            <!-- Links for scrolling to specific sections on a separate page -->
+                            <a href="narrative.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
+                            <a href="music-video.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
+                            <a href="commercial.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
+                        </div>
+                    </div>
                     <!-- Updated href to point to reel.html -->
-                    <a href="reel.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
+                    <a href="reel.html" class="nav-link text-white hover:text-white transition-colors duration-300">Reel</a>
                     <!-- Updated href to point to about.html -->
-                    <a href="about.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
+                    <a href="about.html" class="nav-link text-white hover:text-white transition-colors duration-300">About</a>
+                </div>
+                <!-- Mobile Hamburger Menu Icon -->
+                <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </nav>
+        </header>
+
+        <!-- Mobile Full-Page Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="h-full flex items-center justify-center relative">
+                <!-- Close Button -->
+                <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                
+                <!-- Menu Containers -->
+                <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                    <!-- Main Menu -->
+                    <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                        <!-- Updated href to point to selected-work.html -->
+                        <a href="selected-work.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">
+                            Selected Work
+                        </a>
+                        <!-- Updated href to point to reel.html -->
+                        <a href="reel.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
+                        <!-- Updated href to point to about.html -->
+                        <a href="about.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <main class="container mx-auto px-6">
-        <section id="hero-section" class="py-20 md:py-32 text-center">
-            <div class="max-w-4xl mx-auto">
-            </div>
-        </section>
-    </main>
+        <main class="container mx-auto px-6">
+            <section id="hero-section" class="py-20 md:py-32 text-center">
+                <div class="max-w-4xl mx-auto">
+                </div>
+            </section>
+        </main>
+    </div> <!-- End of main-content -->
 
     <script>
         // Header and scroll logic variables
@@ -168,6 +182,7 @@
             mobileMenu.classList.add('translate-x-full');
         });
 
+        // Removed all loading animation JavaScript logic
     </script>
 </body>
 </html>
