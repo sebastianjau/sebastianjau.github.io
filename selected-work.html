@@ -1,125 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SEBASTIÁN VALDIVIESO JÁUREGUI - Selected Work</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Europa:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-    <style>
-        /* Set the body to have a white background and black text */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: #000000; /* Black text for the main content */
-            background-color: #ffffff; /* White background */
-            text-transform: uppercase;
-            font-size: 1.2rem; /* Set base font size for the body to 1.2rem */
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated the title of the page -->
+    <title>SEBASTIÁN VALDIVIESO JÁUREGUI - Selected Work</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font link for Europa and Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Europa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Set the body to have a white background and black text */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #000000; /* Black text for the main content */
+            background-color: #ffffff; /* White background */
+            text-transform: uppercase;
+        }
 
-        /* Set the logo font to Europa and ensure font-weight is 400 */
-        .logo-font {
-            font-family: 'Europa', sans-serif;
-            font-weight: 400;
-        }
+        /* Set the logo font to Europa and remove any bold styling */
+        .logo-font {
+            font-family: 'Europa', sans-serif;
+        }
 
-        /* Set font for all other navigation links to Montserrat and ensure font-weight is 400 */
-        .nav-link, .dropdown-links a, .mobile-nav-link {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: #000000; /* Black text for nav links */
-            font-weight: 400;
-        }
+        /* Set font for all other navigation links to Montserrat */
+        .nav-link, .dropdown-links a, .mobile-nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: #000000; /* Black text for nav links */
+        }
 
-        /* Hide scrollbar for a cleaner look */
-        body::-webkit-scrollbar {
-            display: none;
-        }
-        body {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
-        
-        /* Apply specific desktop styles using a media query */
-        @media screen and (min-width: 768px) {
-            /* Adjusted the navigation bar padding to match the about page */
-            .site-header {
-                padding-top: 0.7vw;
-                padding-bottom: 0.7vw;
-            }
-            .desktop-nav-links {
-                gap: 2vw; /* Adjusted gap to match */
-            }
-            /* Apply 6vw padding to the nav element for left and right */
-            nav {
-                padding-left: 6vw;
-                padding-right: 6vw;
-            }
-        }
-    </style>
+        /* Hide scrollbar for a cleaner look */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        /* Apply specific desktop styles using a media query */
+        @media screen and (min-width: 768px) {
+            .site-header {
+                padding-top: 0.7vw;
+                padding-bottom: 0.7vw;
+            }
+            .desktop-nav-links {
+                gap: 2vw;
+            }
+        }
+    </style>
 </head>
 <body class="antialiased">
 
-        <header id="main-header" class="site-header fixed w-full top-0 z-50 bg-white transition-transform duration-300 transform py-4 md:py-[0.7vw]">         <nav class="w-full px-6 md:px-[6vw] flex justify-between items-center">                         <a href="index.html" class="logo-font text-black">Sebastián Valdivieso Jáuregui</a>                         <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2vw;">                 <div class="relative group">
-                                        <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
-                        Selected Work
-                    </a>
-                                                            <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
-                                                <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">Narrative</a>
-                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">Music Video</a>
-                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">Commercial</a>
-                    </div>
-                </div>
-                                <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
-                <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">About</a>
-            </div>
-                        <button id="mobile-menu-button" class="text-black md:hidden focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </nav>
-    </header>
+    <!-- Navigation Bar -->
+    <!-- The 'sticky' class was replaced with 'fixed' and transition classes were added for the new scroll behavior -->
+    <header id="main-header" class="site-header fixed w-full top-0 z-50 bg-white transition-transform duration-300 transform">
+        <nav class="w-full px-6 flex justify-between items-center">
+            <!-- Logo link with black text and Europa font -->
+            <a href="index.html" class="nav-link logo-font text-black">Sebastián Valdivieso Jáuregui</a>
+            <!-- Desktop Navigation -->
+            <div class="desktop-nav-links hidden md:flex items-center">
+                <div class="relative group">
+                    <!-- Added hover:underline class for the underline effect on hover -->
+                    <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
+                        Selected Work
+                    </a>
+                    <!-- Dropdown menu with a light gray background and black text -->
+                    <!-- Removed bg-white class for a transparent background -->
+                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
+                        <!-- Changed py-1 to py-0 to reduce the gap between links -->
+                        <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">Narrative</a>
+                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">Music Video</a>
+                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">Commercial</a>
+                    </div>
+                </div>
+                <!-- Added hover:underline class for the underline effect on hover -->
+                <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
+                <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">About</a>
+            </div>
+            <!-- Mobile Hamburger Menu Icon -->
+            <button id="mobile-menu-button" class="text-black md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
 
-        <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform transition-transform duration-300 translate-x-full">
-        <div class="h-full flex items-center justify-center relative">
-                        <button id="close-mobile-menu" class="absolute top-6 right-6 text-black focus:outline-none">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            
-                        <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
-                                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
-                        Selected Work
-                    </a>
-                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
-                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
-                </div>
-                                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
-                                        <button id="back-to-main" class="absolute top-10 left-10 text-black flex items-center space-x-2 focus:outline-none">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Back</span>
-                    </button>
-                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
-                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
-                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <main class="container mx-auto p-6 md:p-12">
-                        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">Selected Work</h1>
+    <!-- Mobile Full-Page Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform transition-transform duration-300 translate-x-full">
+        <div class="h-full flex items-center justify-center relative">
+            <!-- Close Button -->
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-black focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Menu Containers -->
+            <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                <!-- Main Menu with black text -->
+                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
+                        Selected Work
+                    </a>
+                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
+                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
+                </div>
+                <!-- Sub Menu for Selected Work -->
+                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
+                    <!-- Back button -->
+                    <button id="back-to-main" class="absolute top-10 left-10 text-black flex items-center space-x-2 focus:outline-none">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
+                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
+                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container mx-auto p-6 md:p-12">
+        <!-- Adjusted the margin of the h1 title to decrease the top gap and increase the bottom gap -->
+        <!-- Added tracking-widest for increased letter spacing -->
+        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">Selected Work</h1>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <!-- Work grid container for a two-column layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 
-                        <div class="group relative overflow-hidden border border-gray-200">
-                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Project+1+Image" alt="Project 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                        <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Project Title One</h2>
-                </div>
-            </div>
+            <!-- Work Item 1: The title appears on hover, centered on the image. -->
+            <div class="group relative overflow-hidden border border-gray-200">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Project+1+Image" alt="Project 1" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Project Title One</h2>
+                </div>
+            </div>
 
-                        <div class="group relative overflow-hidden border border-gray-200">
-                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Project+2+Image" alt="Project 2" class="w-full h-auto transition-
+            <!-- Work Item 2: The title appears on hover, centered on the image. -->
+            <div class="group relative overflow-hidden border border-gray-200">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Project+2+Image" alt="Project 2" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Project Title Two</h2>
+                </div>
+            </div>
+
+            <!-- Work Item 3: The title appears on hover, centered on the image. -->
+            <div class="group relative overflow-hidden border border-gray-200">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Project+3+Image" alt="Project 3" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Project Title Three</h2>
+                </div>
+            </div>
+
+            <!-- Work Item 4: The title appears on hover, centered on the image. -->
+            <div class="group relative overflow-hidden border border-gray-200">
+                <img src="https://placehold.co/800x600/e5e7eb/374151?text=Project+4+Image" alt="Project 4" class="w-full h-auto transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <!-- Added tracking-widest for increased letter spacing -->
+                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Project Title Four</h2>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer with social media links and copyright -->
+    <footer class="bg-white py-6 text-center">
+        <div class="container mx-auto px-6">
+            <!-- The 'text-2xl' class was applied here to increase the icon size -->
+            <div class="flex justify-center space-x-6 text-2xl mb-4">
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="IMDb"><i class="fab fa-imdb"></i></a>
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+            </div>
+            <p class="text-gray-600 text-xs">© 2020 Sebastián Valdivieso Jáuregui. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get mobile menu elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const mainMenu = document.getElementById('main-menu');
+        const subMenu = document.getElementById('sub-menu');
+        const backToMainButton = document.getElementById('back-to-main');
+
+        // Get the header element for the new scroll logic
+        const header = document.getElementById('main-header');
+        let lastScrollY = window.scrollY;
+
+        // Add a scroll event listener to the window
+        window.addEventListener('scroll', () => {
+            // If the user scrolls down and is not near the top of the page (offset of 100px)
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                header.classList.add('-translate-y-full'); // Hide the header
+            }
+            // If the user scrolls up
+            else if (window.scrollY < lastScrollY) {
+                header.classList.remove('-translate-y-full'); // Show the header
+            }
+            // Update the last scroll position
+            lastScrollY = window.scrollY;
+        });
+
+        // Mobile Menu Event Listeners
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            // Reset to main menu view when closing
+            mainMenu.classList.remove('translate-x-full');
+            subMenu.classList.add('translate-x-full');
+        });
+
+        // Handle "Selected Work" link in mobile menu to show the sub-menu
+        document.querySelector('.mobile-nav-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            mainMenu.classList.add('translate-x-full');
+            subMenu.classList.remove('translate-x-full');
+        });
+        
+        // Handle "Back" button in sub-menu
+        backToMainButton.addEventListener('click', () => {
+            mainMenu.classList.remove('translate-x-full');
+            subMenu.classList.add('translate-x-full');
+        });
+
+        // Close mobile menu when a sub-menu link is clicked
+        const subNavLinks = document.querySelectorAll('.sub-nav-link');
+        subNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+</body>
+</html>
