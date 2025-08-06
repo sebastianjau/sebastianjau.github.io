@@ -1,168 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated the title of the page -->
-    <title>SEBASTIÁN VALDIVIESO JÁUREGUI - About</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Font link for Europa and Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Europa:wght@400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-    <style>
-        /* Set the body to have a white background and black text */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: #000000; /* Black text for the main content */
-            background-color: #ffffff; /* White background */
-            text-transform: uppercase;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SEBASTIÁN VALDIVIESO JÁUREGUI - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Europa:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Set the body to have a white background and black text */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #000000; /* Black text for the main content */
+            background-color: #ffffff; /* White background */
+            text-transform: uppercase;
+        }
 
-        /* Set the logo font to Europa and remove any bold styling */
-        .logo-font {
-            font-family: 'Europa', sans-serif;
-            font-weight: 400; /* Ensure font-weight is 400 */
-        }
+        /* Set the logo font to Europa and remove any bold styling */
+        .logo-font {
+            font-family: 'Europa', sans-serif;
+            font-weight: 400; /* Ensure font-weight is 400 */
+        }
 
-        /* Set font for all other navigation links to Montserrat */
-        .nav-link, .dropdown-links a, .mobile-nav-link {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: #000000; /* Black text for nav links */
-            font-weight: 400; /* Ensure font-weight is 400 */
-        }
+        /* Set font for all other navigation links to Montserrat */
+        .nav-link, .dropdown-links a, .mobile-nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: #000000; /* Black text for nav links */
+            font-weight: 400; /* Ensure font-weight is 400 */
+        }
 
-        /* Hide scrollbar for a cleaner look */
-        body::-webkit-scrollbar {
-            display: none;
-        }
-        body {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
-        
-        /* Apply specific desktop styles using a media query */
-        @media screen and (min-width: 768px) {
-            /* Adjust the navigation bar padding to 1.4vw total */
-            .site-header {
-                padding-top: 0.7vw;
-                padding-bottom: 0.7vw;
-            }
-            .desktop-nav-links {
-                gap: 2vw; /* Matched gap to landing page */
-            }
-            /* Apply 6vw padding to the nav element for left and right */
-            nav {
-                padding-left: 6vw;
-                padding-right: 6vw;
-            }
-        }
-        /* Custom style for the biography text to set font size to 1.2rem */
-        /* Updated font size from 1rem to 1.2rem */
-        .biography-text p {
-            font-size: 0.9rem;
-        }
-    </style>
+        /* Hide scrollbar for a cleaner look */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        /* Apply specific desktop styles using a media query */
+        @media screen and (min-width: 768px) {
+            /* Adjust the navigation bar padding to 1.4vw total */
+            .site-header {
+                padding-top: 0.7vw;
+                padding-bottom: 0.7vw;
+            }
+            .desktop-nav-links {
+                gap: 2vw; /* Matched gap to landing page */
+            }
+            /* Apply 6vw padding to the nav element for left and right */
+            nav {
+                padding-left: 6vw;
+                padding-right: 6vw;
+            }
+        }
+        /* Custom style for the biography text to set font size to 1.2rem */
+        /* Updated font size from 1rem to 1.2rem */
+        .biography-text p {
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navigation Bar -->
-    <!-- The 'sticky' class was replaced with 'fixed' and transition classes were added for the new scroll behavior -->
-    <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform py-8 md:py-[1.4vw]"> <!-- Matched vertical padding -->
-        <nav class="w-full px-6 md:px-[6vw] flex justify-between items-center"> <!-- Matched horizontal padding -->
-            <!-- Logo link with black text and Europa font -->
-            <a href="index.html" class="logo-font text-black">Sebastián Valdivieso Jáuregui</a> <!-- Removed nav-link class -->
-            <!-- Desktop Navigation -->
-            <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2vw;"> <!-- Matched gap -->
-                <div class="relative group">
-                    <!-- Added hover:underline class for the underline effect on hover -->
-                    <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
-                        Selected Work
-                    </a>
-                    <!-- Dropdown menu with a light gray background and black text -->
-                    <!-- Removed bg-white class for a transparent background -->
-                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
-                        <!-- Changed py-1 to py-0 to reduce the gap between links -->
-                        <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">Narrative</a>
-                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">Music Video</a>
-                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">Commercial</a>
-                    </div>
-                </div>
-                <!-- Added hover:underline class for the underline effect on hover -->
-                <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
-                <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">About</a>
-            </div>
-            <!-- Mobile Hamburger Menu Icon -->
-            <button id="mobile-menu-button" class="text-black md:hidden focus:outline-none">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </nav>
-    </header>
+            <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform py-4 md:py-[0.7vw]">         <nav class="w-full px-6 md:px-[6vw] flex justify-between items-center">                         <a href="index.html" class="logo-font text-black">Sebastián Valdivieso Jáuregui</a>                         <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2vw;">                 <div class="relative group">
+                                        <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
+                        Selected Work
+                    </a>
+                                                            <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
+                                                <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">Narrative</a>
+                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">Music Video</a>
+                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">Commercial</a>
+                    </div>
+                </div>
+                                <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
+                <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">About</a>
+            </div>
+                        <button id="mobile-menu-button" class="text-black md:hidden focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
 
-    <!-- Mobile Full-Page Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform transition-transform duration-300 translate-x-full">
-        <div class="h-full flex items-center justify-center relative">
-            <!-- Close Button -->
-            <button id="close-mobile-menu" class="absolute top-6 right-6 text-black focus:outline-none">
-                <i class="fas fa-times text-2xl"></i>
-            </button>
-            
-            <!-- Menu Containers -->
-            <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
-                <!-- Main Menu with black text -->
-                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
-                        Selected Work
-                    </a>
-                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
-                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
-                </div>
-                <!-- Sub Menu for Selected Work -->
-                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
-                    <!-- Back button -->
-                    <button id="back-to-main" class="absolute top-10 left-10 text-black flex items-center space-x-2 focus:outline-none">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Back</span>
-                    </button>
-                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
-                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
-                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <main class="container mx-auto p-6 md:p-12">
-        <!-- Adjusted the margin of the h1 title to decrease the top gap and increase the bottom gap -->
-        <!-- Added tracking-widest for increased letter spacing -->
-        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">About Me</h1>
-        
-        <!-- The new content for the about section -->
-        <!-- Adjusted the flex layout to ensure a half-and-half split and vertical alignment -->
-        <!-- Changed max-w-7xl to max-w-full to make the columns bigger -->
-        <div class="max-w-full mx-auto flex flex-col md:flex-row items-start gap-8 md:gap-16">
-            <!-- Removed rounded-md from the image and adjusted the width to 1/2 for desktop -->
-            <div class="flex-shrink-0 w-full md:w-1/2">
-                <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/about-pic.webp" alt="Headshot" class="w-full h-auto object-cover shadow-lg border border-gray-200">
-            </div>
-            
-            <!-- Adjusted the text container width to 1/2 for desktop -->
-            <div class="flex-grow w-full md:w-1/2 text-left text-black">
-                <!-- Removed `text-xl` and added a new class `biography-text` to apply custom font size -->
-                <div class="space-y-4 biography-text leading-relaxed normal-case">
-                    <p>
-                        If you've reached this section, it's because you liked my work and want to learn more about the person behind it, so thank you for reading. My name is Sebastián Valdivieso, a cinematographer who recently had the opportunity to be part of the ASC Vision Mentorship 2023. I don't belong here or there; I'm a cultural fusion who has traveled throughout Latin America since I was young.
-                    </p>
-                    <p>
-                        I love watching movies, walking in nature, and hiking; I see them as spaces to breathe, reconnect with myself, and be aware of everything happening around me. Just like on a set, mindfulness is essential to everything I do.
-                    </p>
-                   <p>
-                        To me, telling stories is about building a community, being able to contribute from my experiences as a human being, and discovering a new part of myself within them. Although I'm very technical, I like to leave room for emotions because I believe cinema is a vast empathy machine capable of moving people and making them feel. The key to it is allowing ourselves to be vulnerable within it. Through it, we can control what is seen and what is not, whether it's a frame, an experience, lights, or emotions because ultimately everything contributes to the evolution of a story, but as filmmakers, we decide what remains in the final cut.
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform transition-transform duration-300 translate-x-full">
+        <div class="h-full flex items-center justify-center relative">
+                        <button id="close-mobile-menu" class="absolute top-6 right-6 text-black focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+                        <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
+                        Selected Work
+                    </a>
+                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
+                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
+                </div>
+                                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
+                                        <button id="back-to-main" class="absolute top-10 left-10 text-black flex items-center space-x-2 focus:outline-none">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
+                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
+                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <main class="container mx-auto p-6 md:p-12">
+                        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">About Me</h1>
+        
+                                <div class="max-w-full mx-auto flex flex-col md:flex-row items-start gap-8 md:gap-16">
+                        <div class="flex-shrink-0 w-full md:w-1/2">
+                <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/about-pic.webp" alt="Headshot" class="w-full h-auto object-cover shadow-lg border border-gray-200">
+            </div>
+            
+                        <div class="flex-grow w-full md:w-1/2 text-left text-black">
+                                <div class="space-y-4 biography-text leading-relaxed normal-case">
+                    <p>
+                        If you've reached this section, it's because you liked my work and want to learn more about the person behind it, so thank you for reading. My name is Sebastián Valdivieso, a cinematographer who recently had the opportunity to be part of the ASC Vision Mentorship 2023. I don't belong here or there; I'm a cultural fusion who has traveled throughout Latin America since I was young.
                     </p>
-
                     <p>
                         I graduated with an MFA in Film Production at the University of Texas. I have achieved various accomplishments throughout my career, both inside and outside the university. Among the most recent are awards such as the DGA Student Film Award, special mentions from OutFest Los Angeles, BFI Future Film Festival, and the Yugo BAFTA Student Awards. I have also been selected for international festivals like the International Film Festival Rotterdam, Palm Springs International ShortFest, Slamdance Film Festival, New York Latino Film Festival, and New Orleans Film Festival. Through each one of these experiences, I have learned more about collaboration and the importance of community.
                     </p>
@@ -187,15 +150,11 @@
 
 
 
-    <!-- Footer with social media links and copyright -->
-
-    <footer class="bg-white py-6 text-center">
+        <footer class="bg-white py-6 text-center">
 
         <div class="container mx-auto px-6">
 
-            <!-- The 'text-2xl' class was applied here to increase the icon size -->
-
-            <div class="flex justify-center space-x-6 text-2xl mb-4">
+                        <div class="flex justify-center space-x-6 text-2xl mb-4">
 
                 <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="IMDb"><i class="fab fa-imdb"></i></a>
 
@@ -336,4 +295,3 @@
 </body>
 
 </html>
-
