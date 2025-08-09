@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Europa&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
     <style>
         /* Base styles from your original file */
         body {
@@ -19,9 +21,24 @@
             text-transform: uppercase;
         }
 
+        /* Set the logo font to Europa, overriding the nav-link setting, with font weight 700 */
         .logo-font {
-            font-family: 'Europa', sans-serif;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 400; /* Changed from 400 to 700 */
+          line-height: 1;
+          letter-spacing: 0;
         }
+
+        #main-header {
+  padding-top: 1.4vw;
+  padding-bottom: 1.4vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.desktop-nav-links {
+  gap: 2vw; /* spacing between nav links */
+}
 
         .nav-link, .dropdown-links a, .mobile-nav-link {
             font-family: 'Montserrat', sans-serif;
@@ -211,3 +228,4 @@
     </script>
 </body>
 </html>
+
