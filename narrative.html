@@ -3,61 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated the title of the page -->
     <title>SEBASTIÁN VALDIVIESO JÁUREGUI - Narrative</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Font link for Europa and Montserrat -->
+    <!-- Font links for Europa, Montserrat, and Fira Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Europa&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
-  <style>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Set the body to have a white background and black text */
         body {
             font-family: 'Montserrat', sans-serif;
-            color: #000000; /* Black text for the main content */
-            background-color: #ffffff; /* White background */
+            color: #000000;
+            background-color: #ffffff;
             text-transform: uppercase;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        /* Hide scrollbar for a cleaner look */
+        body::-webkit-scrollbar {
+            display: none;
         }
 
-        /* Set the logo font to Europa, overriding the nav-link setting, with font weight 700 */
+        /* Set the logo font to Fira Sans */
         .logo-font {
             font-family: 'Fira Sans', sans-serif;
-            font-weight: 400; /* Changed from 400 to 700 */
-          line-height: 1;
-          letter-spacing: 0;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0;
         }
-
-        #main-header {
-  padding-top: 1.4vw;
-  padding-bottom: 1.4vw;
-  padding-left: 3vw;
-  padding-right: 3vw;
-}
-
-.desktop-nav-links {
-  gap: 2vw; /* spacing between nav links */
-}
 
         /* Set font for all other navigation links to Montserrat */
         .nav-link, .dropdown-links a, .mobile-nav-link {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.2rem;
-            color: #000000; /* Black text for nav links */
+            color: #000000;
         }
 
-        /* Hide scrollbar for a cleaner look */
-        body::-webkit-scrollbar {
-            display: none;
+        #main-header {
+            padding-top: 1.4vw;
+            padding-bottom: 1.4vw;
+            padding-left: 3vw;
+            padding-right: 3vw;
         }
-        body {
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
+
+        .desktop-nav-links {
+            gap: 2vw; /* spacing between nav links */
         }
-        
+
         /* Apply specific desktop styles using a media query */
         @media screen and (min-width: 768px) {
             .site-header {
@@ -73,28 +68,22 @@
 <body class="antialiased">
 
     <!-- Navigation Bar -->
-    <!-- The 'sticky' class was replaced with 'fixed' and transition classes were added for the new scroll behavior -->
     <header id="main-header" class="site-header fixed w-full top-0 z-50 bg-white transition-transform duration-300 transform">
         <nav class="w-full px-6 flex justify-between items-center">
-            <!-- Logo link with black text and Europa font -->
-            <a href="index.html" class="nav-link logo-font text-black">SEBASTIÁN VALDIVIESO JÁUREGUI</a>
+            <!-- Logo link with black text and Fira Sans font -->
+            <a href="index.html" class="logo-font text-black">SEBASTIÁN VALDIVIESO JÁUREGUI</a>
             <!-- Desktop Navigation -->
             <div class="desktop-nav-links hidden md:flex items-center">
                 <div class="relative group">
-                    <!-- Added hover:underline class for the underline effect on hover -->
                     <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
                         SELECTED WORK
                     </a>
-                    <!-- Dropdown menu with a light gray background and black text -->
-                    <!-- Removed bg-white class for a transparent background -->
                     <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
-                        <!-- Changed py-1 to py-0 to reduce the gap between links -->
                         <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">NARRATIVE</a>
                         <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">MUSIC VIDEO</a>
                         <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">COMMERCIAL</a>
                     </div>
                 </div>
-                <!-- Added hover:underline class for the underline effect on hover -->
                 <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">REEL</a>
                 <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">ABOUT</a>
             </div>
@@ -139,56 +128,38 @@
     </div>
     
     <main class="container mx-auto p-6 md:p-12">
-        <!-- Adjusted the margin of the h1 title to decrease the top gap and increase the bottom gap -->
-        <!-- Added tracking-widest for increased letter spacing -->
         <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">Narrative</h1>
-
-        <!-- Work grid container for a two-column layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-
-            <!-- Work Item 1: The title appears on hover, centered on the image. -->
             <a href="men-in-blue.html" class="group relative overflow-hidden border border-gray-200 aspect-[3/2]">
                 <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/Cover.webp" alt="Men in Blue" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <!-- Added tracking-widest for increased letter spacing -->
                     <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Men in Blue</h2>
                 </div>
             </a>
-
-            <!-- Work Item 2: The title appears on hover, centered on the image. -->
             <a href="men-in-blue.html" class="group relative overflow-hidden border border-gray-200 aspect-[3/2]">
                 <img src="https://placehold.co/800x600/e5e7eb/374151?text=Narrative+Project+2+Image" alt="Narrative Project 2" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <!-- Added tracking-widest for increased letter spacing -->
                     <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Narrative Project Two</h2>
                 </div>
             </a>
-
-            <!-- Work Item 3: The title appears on hover, centered on the image. -->
             <a href="project-detail.html" class="group relative overflow-hidden border border-gray-200 aspect-[3/2]">
                 <img src="https://placehold.co/800x600/e5e7eb/374151?text=Narrative+Project+3+Image" alt="Narrative Project 3" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <!-- Added tracking-widest for increased letter spacing -->
                     <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Narrative Project Three</h2>
                 </div>
             </a>
-
-            <!-- Work Item 4: The title appears on hover, centered on the image. -->
             <a href="project-detail.html" class="group relative overflow-hidden border border-gray-200 aspect-[3/2]">
                 <img src="https://placehold.co/800x600/e5e7eb/374151?text=Narrative+Project+4+Image" alt="Narrative Project 4" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <!-- Added tracking-widest for increased letter spacing -->
                     <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Narrative Project Four</h2>
                 </div>
             </a>
-
         </div>
     </main>
 
     <!-- Footer with social media links and copyright -->
     <footer class="bg-white py-6 text-center">
         <div class="container mx-auto px-6">
-            <!-- The 'text-2xl' class was applied here to increase the icon size -->
             <div class="flex justify-center space-x-6 text-2xl mb-4">
                 <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="IMDb"><i class="fab fa-imdb"></i></a>
                 <a href="#" class="text-black hover:text-gray-500 transition-colors duration-300" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -260,8 +231,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
