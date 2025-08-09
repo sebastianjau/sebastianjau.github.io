@@ -12,6 +12,8 @@
     <!-- Font link for Europa and Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Europa&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
     <style>
         /* Set the body to have a white background and black text */
         body {
@@ -21,10 +23,24 @@
             text-transform: uppercase;
         }
 
-        /* Set the logo font to Europa and remove any bold styling */
+        /* Set the logo font to Europa, overriding the nav-link setting, with font weight 700 */
         .logo-font {
-            font-family: 'Europa', sans-serif;
+            font-family: 'Fira Sans', sans-serif;
+            font-weight: 400; /* Changed from 400 to 700 */
+          line-height: 1;
+          letter-spacing: 0;
         }
+
+        #main-header {
+  padding-top: 1.4vw;
+  padding-bottom: 1.4vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.desktop-nav-links {
+  gap: 2vw; /* spacing between nav links */
+}
 
         /* Set font for all other navigation links to Montserrat */
         .nav-link, .dropdown-links a, .mobile-nav-link {
@@ -244,3 +260,4 @@
     </script>
 </body>
 </html>
+
