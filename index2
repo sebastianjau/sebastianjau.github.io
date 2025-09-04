@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEBASTIÁN VALDIVIESO JÁUREGUI | Cinematographer | Austin, TX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Europa:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply 'Europa' font to the main body, uppercase, and a fixed background image */
+        body {
+            font-family: 'Europa', sans-serif;
+            color: #e2e8f0; /* Light gray text for the main content */
+            text-transform: uppercase; /* All text will be in uppercase */
+            font-size: 1.2rem; /* Set base font size for the body to 1.2rem */
+            background-color: #1a202c; /* Add a dark background color for a consistent look */
+            
+            /* Set the background image and properties. Corrected the URL for the image. */
+            background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/main/Cover.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        /* Apply 'Montserrat' font and the new font size to the navigation links and logo with font weight 400 */
+        .nav-link, .dropdown-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem; /* Set font size for desktop navigation and dropdown links to 1.2rem */
+            font-weight: 400; /* Set font weight to 400 */
+        }
+
+        /* Apply Montserrat font to mobile navigation links with font weight 400 */
+        .mobile-nav-link {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400; /* Set font weight to 400 */
+        }
+        
+        /* Set the logo font to Montserrat to match the links */
+        .logo-font {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: 0;
+        }
+        
+        /* Set color for regular navigation links */
+        .nav-link {
+            color: white;
+        }
+
+        /* Style for the black Reel link */
+        .reel-link {
+            color: black;
+        }
+
+        /* Set color for the logo */
+        .logo-font {
+            color: white;
+        }
+        
+        /* Specific size for the logo */
+        .logo-size {
+            font-size: 1.3rem;
+        }
+
+        /* Hide scrollbar for a cleaner look */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Header for the centered logo and mobile menu button -->
+    <header class="w-full px-6 md:px-[6vw] flex justify-center items-center py-8 fixed top-0 z-50">
+        <!-- Logo is now centered inside the header -->
+        <a href="index.html" class="nav-link logo-size logo-font">SEBASTIÁN VALDIVIESO | CINEMATOGRAPHER</a>
+        <!-- Mobile menu button is now positioned absolutely to the right -->
+        <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none absolute right-6">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </header>
+
+    <!-- Centered main content container -->
+    <main class="container mx-auto px-6 flex-grow flex flex-col items-center justify-center">
+        <!-- Main navigation links for desktop, centered below the logo -->
+        <div class="hidden md:flex flex-col items-center justify-center">
+            <div class="desktop-nav-links flex items-center" style="gap: 15vw;"> 
+                <a href="selected-work.html" class="nav-link">
+                    Work
+                </a>
+                <a href="reel.html" class="nav-link reel-link">Reel</a>
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile slide-out menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-full">
+        <div class="h-full flex items-center justify-center relative">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                    <a href="selected-work.html" class="mobile-nav-link text-white text-3xl transition-colors duration-300">
+                        Work
+                    </a>
+                    <a href="reel.html" class="mobile-nav-link reel-link text-3xl transition-colors duration-300">Reel</a>
+                    <a href="about.html" class="mobile-nav-link text-white text-3xl transition-colors duration-300">About</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <script>
+        // Mobile Menu Event Listeners
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+    </script>
+</body>
+</html>
