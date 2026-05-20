@@ -23,7 +23,7 @@
             font-size: 1.2rem; /* Set base font size for the body to 1.2rem */
             
             /* Set the background image and properties. Corrected the URL for the image. */
-            background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/cover2.webp');
+            background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/main/Cover.webp');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -42,11 +42,6 @@
         .mobile-nav-link {
             font-family: 'Montserrat', sans-serif;
             font-weight: 400; /* Set font weight to 400 */
-        }
-
-        /* Override uppercase on nav links — Title Case */
-        .nav-link, .mobile-nav-link {
-            text-transform: capitalize;
         }
 
         /* Set the logo font to Europa, overriding the nav-link setting, with font weight 700 */
@@ -94,9 +89,19 @@
                 <a href="index.html" class="logo-font text-white">Sebastián Valdivieso Jáuregui</a>
                 <!-- Desktop Navigation -->
                 <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2vw;"> <!-- Changed gap to 2vw -->
-                                        <a href="narrative.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Narrative</a>
-                    <a href="music-video.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Music Video</a>
-                    <a href="commercial.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Commercial</a>
+                    <div class="relative group">
+                        <!-- Updated href to point to selected-work.html -->
+                        <a href="selected-work.html" class="nav-link text-white hover:text-white transition-colors duration-300">
+                            Selected Work
+                        </a>
+                        <!-- The dropdown menu now has no background, border, or shadow. Changed 'left-0' to 'right-0' to align it to the right. -->
+                        <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block">
+                            <!-- Links for scrolling to specific sections on a separate page -->
+                            <a href="narrative.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
+                            <a href="music-video.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
+                            <a href="commercial.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
+                        </div>
+                    </div>
                     <!-- Updated href to point to reel.html -->
                     <a href="reel.html" class="nav-link text-white hover:text-white transition-colors duration-300">Reel</a>
                     <!-- Updated href to point to about.html -->
@@ -109,19 +114,27 @@
             </nav>
         </header>
 
-                <!-- Mobile Full-Page Menu -->
+        <!-- Mobile Full-Page Menu -->
         <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-full">
             <div class="h-full flex items-center justify-center relative">
                 <!-- Close Button -->
                 <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
-                <div class="flex flex-col justify-center items-center space-y-6">
-                    <a href="narrative.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Narrative</a>
-                    <a href="music-video.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Music Video</a>
-                    <a href="commercial.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Commercial</a>
-                    <a href="reel.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Reel</a>
-                    <a href="about.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">About</a>
+                
+                <!-- Menu Containers -->
+                <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                    <!-- Main Menu -->
+                    <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                        <!-- Updated href to point to selected-work.html -->
+                        <a href="selected-work.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">
+                            Selected Work
+                        </a>
+                        <!-- Updated href to point to reel.html -->
+                        <a href="reel.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
+                        <!-- Updated href to point to about.html -->
+                        <a href="about.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,26 +148,25 @@
     </div> <!-- End of main-content -->
 
     <script>
-        // Get mobile menu elements
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-
-        // Get the header element for the new scroll logic
+        // Header and scroll logic variables
         const header = document.getElementById('main-header');
         let lastScrollY = window.scrollY;
 
-        // Add a scroll event listener to the window
+        // New scroll event listener to hide/show the header
         window.addEventListener('scroll', () => {
             if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                header.classList.add('-translate-y-full');
+                header.classList.add('-translate-y-full'); // Hide the header
             } else if (window.scrollY < lastScrollY) {
-                header.classList.remove('-translate-y-full');
+                header.classList.remove('-translate-y-full'); // Show the header
             }
             lastScrollY = window.scrollY;
         });
 
         // Mobile Menu Event Listeners
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
         });
@@ -162,6 +174,8 @@
         closeMobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
         });
+
+        // Removed all loading animation JavaScript logic
     </script>
 </body>
 </html>
