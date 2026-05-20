@@ -41,6 +41,11 @@
             text-transform: capitalize;
         }
 
+        /* Active page link */
+        .nav-link.active {
+            text-decoration: underline;
+        }
+
         #main-header {
             padding-top: 1.4vw;
             padding-bottom: 1.4vw;
@@ -55,11 +60,11 @@
 </head>
 <body class="antialiased">
 
-    <header id="main-header" class="site-header fixed w-full top-0 z-50 bg-white transition-transform duration-300 transform">
+    <header id="main-header" class="site-header fixed w-full top-0 z-50 bg-white border-b border-black transition-transform duration-300 transform">
         <nav class="w-full flex justify-between items-center">
             <a href="index.html" class="logo-font text-black">Sebastián Valdivieso Jáuregui</a>
             <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2.3vw;">
-                <a href="narrative.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Narrative</a>
+                <a href="narrative.html" class="nav-link active text-black hover:text-black transition-colors duration-300">Narrative</a>
                 <a href="commercial.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Commercial</a>
                 <a href="music-video.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Music Video</a>
                 <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">Reel</a>
@@ -86,8 +91,8 @@
         </div>
     </div>
 
-    <main class="container mx-auto p-6 md:p-12">
-        <h1 class="text-4xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">Narrative</h1>
+    <main class="container mx-auto p-6 md:p-12 pt-20 md:pt-24">
+        <h1 class="text-9xl font-bold text-center mt-2 mb-8 md:mt-4 md:mb-12 tracking-widest">Narrative</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             <a href="men-in-blue.html" class="group relative overflow-hidden border border-gray-200 aspect-[3/2]">
                 <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/Cover.webp" alt="Men in Blue" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
