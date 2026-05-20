@@ -80,20 +80,9 @@
             <a href="index.html" text-black">SEBASTIÁN VALDIVIESO JÁUREGUI</a>
             <!-- Desktop Navigation -->
             <div class="desktop-nav-links hidden md:flex items-center">
-                <div class="relative group">
-                    <!-- Added hover:underline class for the underline effect on hover -->
-                    <a href="selected-work.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">
-                        SELECTED WORK
-                    </a>
-                    <!-- Dropdown menu with a light gray background and black text -->
-                    <!-- Removed bg-white class for a transparent background -->
-                    <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block py-1">
-                        <!-- Changed py-1 to py-0 to reduce the gap between links -->
-                        <a href="narrative.html" class="block text-black px-4 py-0 text-right hover:underline">NARRATIVE</a>
-                        <a href="music-video.html" class="block text-black px-4 py-0 text-right hover:underline">MUSIC VIDEO</a>
-                        <a href="commercial.html" class="block text-black px-4 py-0 text-right hover:underline">COMMERCIAL</a>
-                    </div>
-                </div>
+                                <a href="narrative.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">NARRATIVE</a>
+                <a href="music-video.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">MUSIC VIDEO</a>
+                <a href="commercial.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">COMMERCIAL</a>
                 <!-- Added hover:underline class for the underline effect on hover -->
                 <a href="reel.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">REEL</a>
                 <a href="about.html" class="nav-link text-black hover:text-black hover:underline transition-colors duration-300">ABOUT</a>
@@ -105,35 +94,19 @@
         </nav>
     </header>
 
-    <!-- Mobile Full-Page Menu -->
+        <!-- Mobile Full-Page Menu -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform transition-transform duration-300 translate-x-full">
         <div class="h-full flex items-center justify-center relative">
             <!-- Close Button -->
             <button id="close-mobile-menu" class="absolute top-6 right-6 text-black focus:outline-none">
                 <i class="fas fa-times text-2xl"></i>
             </button>
-            
-            <!-- Menu Containers -->
-            <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
-                <!-- Main Menu with black text -->
-                <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                    <a href="selected-work.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">
-                        Selected Work
-                    </a>
-                    <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
-                    <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
-                </div>
-                <!-- Sub Menu for Selected Work -->
-                <div id="sub-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-full">
-                    <!-- Back button -->
-                    <button id="back-to-main" class="absolute top-10 left-10 text-black flex items-center space-x-2 focus:outline-none">
-                        <i class="fas fa-arrow-left"></i>
-                        <span>Back</span>
-                    </button>
-                    <a href="#narrative.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
-                    <a href="#music-video.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
-                    <a href="#commercial.html" class="sub-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
-                </div>
+            <div class="flex flex-col justify-center items-center space-y-6">
+                <a href="narrative.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Narrative</a>
+                <a href="music-video.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Music Video</a>
+                <a href="commercial.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Commercial</a>
+                <a href="reel.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">Reel</a>
+                <a href="about.html" class="mobile-nav-link text-black hover:text-gray-500 text-3xl transition-colors duration-300">About</a>
             </div>
         </div>
     </div>
@@ -203,9 +176,6 @@
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-        const mainMenu = document.getElementById('main-menu');
-        const subMenu = document.getElementById('sub-menu');
-        const backToMainButton = document.getElementById('back-to-main');
 
         // Get the header element for the new scroll logic
         const header = document.getElementById('main-header');
@@ -213,15 +183,11 @@
 
         // Add a scroll event listener to the window
         window.addEventListener('scroll', () => {
-            // If the user scrolls down and is not near the top of the page (offset of 100px)
             if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                header.classList.add('-translate-y-full'); // Hide the header
+                header.classList.add('-translate-y-full');
+            } else if (window.scrollY < lastScrollY) {
+                header.classList.remove('-translate-y-full');
             }
-            // If the user scrolls up
-            else if (window.scrollY < lastScrollY) {
-                header.classList.remove('-translate-y-full'); // Show the header
-            }
-            // Update the last scroll position
             lastScrollY = window.scrollY;
         });
 
@@ -232,30 +198,6 @@
 
         closeMobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
-            // Reset to main menu view when closing
-            mainMenu.classList.remove('translate-x-full');
-            subMenu.classList.add('translate-x-full');
-        });
-
-        // Handle "Selected Work" link in mobile menu to show the sub-menu
-        document.querySelector('.mobile-nav-link').addEventListener('click', (e) => {
-            e.preventDefault();
-            mainMenu.classList.add('translate-x-full');
-            subMenu.classList.remove('translate-x-full');
-        });
-        
-        // Handle "Back" button in sub-menu
-        backToMainButton.addEventListener('click', () => {
-            mainMenu.classList.remove('translate-x-full');
-            subMenu.classList.add('translate-x-full');
-        });
-
-        // Close mobile menu when a sub-menu link is clicked
-        const subNavLinks = document.querySelectorAll('.sub-nav-link');
-        subNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-            });
         });
     </script>
 </body>
