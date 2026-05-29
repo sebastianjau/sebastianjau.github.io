@@ -12,11 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        html, body {
-            height: 100%;
-            min-height: 100vh;
-        }
-
+        html, body { height: 100%; min-height: 100vh; }
         body {
             font-family: 'Europa', sans-serif;
             color: #e2e8f0;
@@ -29,46 +25,14 @@
             background-attachment: fixed;
             overflow: hidden;
         }
-
-        .nav-link, .dropdown-links a {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 400;
-        }
-
-        .mobile-nav-link {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-        }
-
-        /* Override uppercase on nav links — Title Case */
-        .nav-link, .mobile-nav-link, .dropdown-links a {
-            text-transform: capitalize;
-        }
-
-        .logo-font {
-            font-family: 'Fira Sans', sans-serif;
-            font-weight: 400;
-            line-height: 1;
-            letter-spacing: 0;
-        }
-
-        #main-header {
-            padding-top: 1.4vw;
-            padding-bottom: 1.4vw;
-            padding-left: 3vw;
-            padding-right: 3vw;
-        }
-
-        .desktop-nav-links {
-            gap: 2.3vw;
-        }
-
+        .nav-link, .dropdown-links a { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 400; }
+        .mobile-nav-link { font-family: 'Montserrat', sans-serif; font-weight: 400; }
+        .nav-link, .mobile-nav-link, .dropdown-links a { text-transform: capitalize; }
+        .logo-font { font-family: 'Fira Sans', sans-serif; font-weight: 400; line-height: 1; letter-spacing: 0; }
+        #main-header { padding-top: 1.4vw; padding-bottom: 1.4vw; padding-left: 3vw; padding-right: 3vw; }
+        .desktop-nav-links { gap: 2.3vw; }
         body::-webkit-scrollbar { display: none; }
-        body {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        body { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="antialiased">
@@ -77,37 +41,24 @@
         <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform">
             <nav class="w-full flex justify-between items-center">
                 <a href="index.html" class="logo-font text-white">Sebastián Valdivieso Jáuregui</a>
-                <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2.3vw;">
-                    <div class="relative group">
-                        <a href="selected-work.html" class="nav-link text-white hover:text-white transition-colors duration-300">
-                            Selected Work
-                        </a>
-                        <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block">
-                            <a href="narrative.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
-                            <a href="music-video.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
-                            <a href="commercial.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
-                        </div>
-                    </div>
-                    <a href="reel.html" class="nav-link text-white hover:text-white transition-colors duration-300">Reel</a>
-                    <a href="about.html" class="nav-link text-white hover:text-white transition-colors duration-300">About</a>
+                <div class="desktop-nav-links hidden xl:flex items-center" style="gap: 2.3vw;">
                     <a href="narrative.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Narrative</a>
                     <a href="commercial.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Commercial</a>
                     <a href="music-video.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Music Video</a>
                     <a href="reel.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Reel</a>
                     <a href="about.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">About</a>
                 </div>
-                <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
+                <button id="mobile-menu-button" class="text-white xl:hidden focus:outline-none">
                     <i class="fas fa-bars text-xl"></i>
-@@ -102,43 +95,43 @@
+                </button>
+            </nav>
+        </header>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-full">
+            <div class="h-full flex items-center justify-center relative">
                 <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
-                <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
-                    <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
-                        <a href="selected-work.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Selected Work</a>
-                        <a href="reel.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
-                        <a href="about.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
-                    </div>
                 <div class="flex flex-col justify-center items-center space-y-6">
                     <a href="narrative.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Narrative</a>
                     <a href="commercial.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Commercial</a>
@@ -124,27 +75,16 @@
     <script>
         const header = document.getElementById('main-header');
         let lastScrollY = window.scrollY;
-
         window.addEventListener('scroll', () => {
-            if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                header.classList.add('-translate-y-full');
-            } else if (window.scrollY < lastScrollY) {
-                header.classList.remove('-translate-y-full');
-            }
+            if (window.scrollY > lastScrollY && window.scrollY > 100) { header.classList.add('-translate-y-full'); }
+            else if (window.scrollY < lastScrollY) { header.classList.remove('-translate-y-full'); }
             lastScrollY = window.scrollY;
         });
-
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-        });
-
-        closeMobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('translate-x-full');
-        });
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.remove('translate-x-full'); });
+        closeMobileMenuButton.addEventListener('click', () => { mobileMenu.classList.add('translate-x-full'); });
     </script>
 </body>
 </html>
