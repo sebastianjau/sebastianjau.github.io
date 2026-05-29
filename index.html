@@ -37,16 +37,15 @@
             body { background-position: 80% center; }
         }
 
-        /* Page fade in */
-        body {
+        /* Page fade in - only content, not navbar */
+        #fade-wrapper {
             animation: fadeIn 0.4s ease-in;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        /* Fade out transition */
-        body.fade-out {
+        #fade-wrapper.fade-out {
             opacity: 0;
             transition: opacity 0.3s ease-out;
         }
