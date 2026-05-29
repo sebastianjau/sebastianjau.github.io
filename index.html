@@ -77,24 +77,37 @@
         <header id="main-header" class="site-header fixed w-full top-0 z-50 transition-transform duration-300 transform">
             <nav class="w-full flex justify-between items-center">
                 <a href="index.html" class="logo-font text-white">Sebastián Valdivieso Jáuregui</a>
-                <div class="desktop-nav-links hidden xl:flex items-center" style="gap: 2.3vw;">
+                <div class="desktop-nav-links hidden md:flex items-center" style="gap: 2.3vw;">
+                    <div class="relative group">
+                        <a href="selected-work.html" class="nav-link text-white hover:text-white transition-colors duration-300">
+                            Selected Work
+                        </a>
+                        <div class="dropdown-links absolute right-0 top-full w-48 hidden group-hover:block">
+                            <a href="narrative.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Narrative</a>
+                            <a href="music-video.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Music Video</a>
+                            <a href="commercial.html" class="block text-white hover:text-white transition-colors duration-300 text-right">Commercial</a>
+                        </div>
+                    </div>
+                    <a href="reel.html" class="nav-link text-white hover:text-white transition-colors duration-300">Reel</a>
+                    <a href="about.html" class="nav-link text-white hover:text-white transition-colors duration-300">About</a>
                     <a href="narrative.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Narrative</a>
                     <a href="commercial.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Commercial</a>
                     <a href="music-video.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Music Video</a>
                     <a href="reel.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">Reel</a>
                     <a href="about.html" class="nav-link text-white hover:text-white hover:underline transition-colors duration-300">About</a>
                 </div>
-                <button id="mobile-menu-button" class="text-white xl:hidden focus:outline-none">
+                <button id="mobile-menu-button" class="text-white md:hidden focus:outline-none">
                     <i class="fas fa-bars text-xl"></i>
-                </button>
-            </nav>
-        </header>
-
-        <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 transform transition-transform duration-300 translate-x-full">
-            <div class="h-full flex items-center justify-center relative">
+@@ -102,43 +95,43 @@
                 <button id="close-mobile-menu" class="absolute top-6 right-6 text-white focus:outline-none">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
+                <div id="mobile-menu-content" class="relative w-full h-full overflow-hidden">
+                    <div id="main-menu" class="absolute inset-0 flex flex-col justify-center items-center space-y-6 transition-transform duration-300 transform translate-x-0">
+                        <a href="selected-work.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Selected Work</a>
+                        <a href="reel.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">Reel</a>
+                        <a href="about.html" class="mobile-nav-link text-white hover:text-white text-3xl transition-colors duration-300">About</a>
+                    </div>
                 <div class="flex flex-col justify-center items-center space-y-6">
                     <a href="narrative.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Narrative</a>
                     <a href="commercial.html" class="mobile-nav-link text-white hover:text-gray-400 text-3xl transition-colors duration-300">Commercial</a>
