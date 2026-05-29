@@ -22,16 +22,15 @@
         .page-title { display: block; width: 100%; text-align: center; }
         .desktop-nav-links { gap: 2.3vw; }
 
-        /* Page fade in */
-        body {
+        /* Page fade in - only content, not navbar */
+        #fade-wrapper {
             animation: fadeIn 0.4s ease-in;
         }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        /* Fade out transition */
-        body.fade-out {
+        #fade-wrapper.fade-out {
             opacity: 0;
             transition: opacity 0.3s ease-out;
         }
@@ -76,6 +75,7 @@
         </div>
     </div>
 
+    <div id="fade-wrapper">
     <main class="container mx-auto p-6 md:p-12 pt-16 md:pt-20">
         <h1 class="page-title font-bold text-center mt-3 mb-3 md:mt-6 md:mb-6 tracking-widest normal-case" style="font-size: 10vw;">Music Video</h1>
         <div class="grid grid-cols-2 gap-4 md:gap-6">
@@ -116,6 +116,7 @@
             <p class="text-gray-600 text-xs">© 2020 Sebastián Valdivieso Jáuregui. All rights reserved.</p>
         </div>
     </footer>
+    </div>
 
     <script>
         const mobileMenuButton = document.getElementById('mobile-menu-button');
