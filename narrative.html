@@ -36,6 +36,17 @@
             transition: opacity 0.3s ease-out;
         }
 
+        /* On PC (mouse/trackpad devices), hide the title overlay until hovered.
+           On touch devices, leave the default always-visible behavior alone. */
+        @media (hover: hover) and (pointer: fine) {
+            .project-overlay {
+                opacity: 0 !important;
+            }
+            .group:hover .project-overlay {
+                opacity: 1 !important;
+            }
+        }
+
         /* Custom breakpoint for iPad landscape */
         @media (min-width: 1100px) {
             .desktop-nav-links { display: flex !important; }
@@ -82,19 +93,19 @@
         <div class="grid grid-cols-2 gap-4 md:gap-6">
             <a href="men-in-blue.html" class="group relative overflow-hidden border border-gray-200 aspect-[16/9]">
                 <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/Cover.webp" alt="Men in Blue" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
+                <div class="project-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
                     <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Men in Blue</h2>
                 </div>
             </a>
             <a href="comadre.html" class="group relative overflow-hidden border border-gray-200 aspect-[16/9]">
                 <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/comadre_fotos/Comadre_8.webp" alt="Comadre" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
+                <div class="project-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
                     <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Comadre</h2>
                 </div>
             </a>
             <a href="sukkot.html" class="group relative overflow-hidden border border-gray-200 aspect-[16/9]">
                 <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/main/Sukkot/Sukkot_033.jpg" alt="Sukkot" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
+                <div class="project-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
                     <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Sukkot</h2>
                 </div>
             </a>
