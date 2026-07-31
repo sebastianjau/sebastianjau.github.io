@@ -47,6 +47,11 @@
             }
         }
 
+        /* Mobile-only caption below the image, hidden on desktop */
+        .mobile-caption {
+            display: none;
+        }
+
         /* Custom breakpoint for iPad landscape */
         @media (min-width: 1100px) {
             .desktop-nav-links { display: flex !important; }
@@ -55,6 +60,22 @@
         @media (max-width: 1099px) {
             .desktop-nav-links { display: none !important; }
             .mobile-hamburger { display: block !important; }
+
+            /* On mobile, drop the in-image overlay title entirely and
+               show a persistent caption below the image instead. */
+            .project-overlay {
+                display: none !important;
+            }
+            .mobile-caption {
+                display: block;
+                color: #000000;
+                text-align: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0.5rem 0.25rem 0;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -91,17 +112,23 @@
     <main class="container mx-auto p-6 md:p-12 pt-16 md:pt-20">
         <h1 class="page-title font-bold text-center mt-3 mb-3 md:mt-6 md:mb-6 tracking-widest normal-case" style="font-size: 10vw;">Commercial</h1>
         <div class="grid grid-cols-2 gap-4 md:gap-6">
-            <a href="alamomart.html" class="group relative overflow-hidden border border-gray-200 aspect-[16/9]">
-                <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/main/AlamoMart/AlamoMart_%201.webp" alt="Alamo Drafthouse" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                <div class="project-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
-                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Alamo Drafthouse-AlamoMart</h2>
+            <a href="alamomart.html" class="group block">
+                <div class="relative overflow-hidden border border-gray-200 aspect-[16/9]">
+                    <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/main/AlamoMart/AlamoMart_%201.webp" alt="Alamo Drafthouse" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
+                        <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Alamo Drafthouse-AlamoMart</h2>
+                    </div>
                 </div>
+                <p class="mobile-caption">Alamo Drafthouse-AlamoMart</p>
             </a>
-            <a href="carhartt-WIP.html" class="group relative overflow-hidden border border-gray-200 aspect-[16/9]">
-                <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/CarharttWIP/Carhartt_002.jpg" alt="Carhartt WIP" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
-                <div class="project-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
-                    <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Carhartt WIP</h2>
+            <a href="carhartt-WIP.html" class="group block">
+                <div class="relative overflow-hidden border border-gray-200 aspect-[16/9]">
+                    <img src="https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/CarharttWIP/Carhartt_002.jpg" alt="Carhartt WIP" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="project-overlay absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
+                        <h2 class="text-2xl font-semibold text-white text-center tracking-widest">Carhartt WIP</h2>
+                    </div>
                 </div>
+                <p class="mobile-caption">Carhartt WIP</p>
             </a>
         </div>
     </main>
