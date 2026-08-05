@@ -85,12 +85,20 @@
 
         <h1 class="page-title font-bold text-center mt-3 mb-3 md:mt-6 md:mb-6 tracking-widest normal-case" style="font-size: clamp(2.5rem, 10vw, 6rem);">Palm Desert</h1>
 
-        <div class="relative mb-4" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
-            <iframe src="https://www.youtube.com/embed/7o2lYBfMEGE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe>
+        <div class="video-facade relative mb-4 cursor-pointer" data-video-id="7o2lYBfMEGE" style="padding-bottom: 56.25%; height: 0; overflow: hidden; background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/CPD/CPD__7.jpg'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 hover:bg-opacity-10 transition-all duration-300">
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white bg-opacity-90 flex items-center justify-center">
+                    <i class="fas fa-play text-black text-xl md:text-2xl ml-1"></i>
+                </div>
+            </div>
         </div>
 
-        <div class="relative mb-10" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
-            <iframe src="https://www.youtube.com/embed/BeLUwc-m0iQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe>
+        <div class="video-facade relative mb-10 cursor-pointer" data-video-id="BeLUwc-m0iQ" style="padding-bottom: 56.25%; height: 0; overflow: hidden; background-image: url('https://raw.githubusercontent.com/sebastianjau/sebastianjau.github.io/refs/heads/main/CPD/CPD__13.jpg'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 hover:bg-opacity-10 transition-all duration-300">
+                <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white bg-opacity-90 flex items-center justify-center">
+                    <i class="fas fa-play text-black text-xl md:text-2xl ml-1"></i>
+                </div>
+            </div>
         </div>
 
         <div class="mb-12 info-text">
@@ -142,6 +150,22 @@
         });
         mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.remove('translate-x-full'); });
         closeMobileMenuButton.addEventListener('click', () => { mobileMenu.classList.add('translate-x-full'); });
+
+        document.querySelectorAll('.video-facade').forEach((facade) => {
+            facade.addEventListener('click', () => {
+                const videoId = facade.getAttribute('data-video-id');
+                const iframe = document.createElement('iframe');
+                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                iframe.frameBorder = '0';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allowFullscreen = true;
+                iframe.className = 'absolute top-0 left-0 w-full h-full';
+                facade.innerHTML = '';
+                facade.style.backgroundImage = 'none';
+                facade.classList.remove('cursor-pointer');
+                facade.appendChild(iframe);
+            }, { once: true });
+        });
     </script>
 </body>
 </html>
